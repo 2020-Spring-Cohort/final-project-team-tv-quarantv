@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 
 namespace QuaranTV.Controllers.Repositories
 {
-    public class IRepository
+    public interface IRepository<T> where T : class
     {
+        IEnumerable<T> GetAll();
+        T GetById(int id);
+        void Create(T obj);
+        void Update(T obj);
+        void Delete(T obj);
     }
 }
