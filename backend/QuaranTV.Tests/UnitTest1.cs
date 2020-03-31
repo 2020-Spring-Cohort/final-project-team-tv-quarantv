@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using NSubstitute;
 
 namespace QuaranTV.Tests
 {

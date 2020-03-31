@@ -9,29 +9,29 @@ namespace QuaranTV.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PlaceholderController : ControllerBase
+    public class MovieController : ControllerBase
     {
-        // GET: api/Placeholder
+        // GET: api/Movie
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Placeholder/5
+        // GET: api/Movie/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Placeholder
+        // POST: api/Movie
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/Placeholder/5
+        // PUT: api/Movie/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
