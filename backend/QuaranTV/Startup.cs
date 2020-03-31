@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using QuaranTV.Models;
+using QuaranTV.Repositories;
 
 namespace QuaranTV
 {
@@ -24,9 +26,11 @@ namespace QuaranTV
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<QuaranTvContext>();
-            services.AddControllers();
             services.AddMvc();
+            services.AddControllers();
+            services.AddDbContext<QuaranTvContext>();
+            services.AddScoped<IRepository<Comment>, CommentRepository>(); 
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
