@@ -22,11 +22,7 @@ namespace QuaranTV
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserTvShow>().HasKey(ut => new
-            {
-                ut.UserId,
-                ut.TvShowId
-            });
+            
         }
     }
 }
