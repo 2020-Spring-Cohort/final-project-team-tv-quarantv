@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using QuaranTV.Models;
 using QuaranTV.Repositories;
+using Newtonsoft.Json;
 
 namespace QuaranTV
 {
@@ -21,6 +22,8 @@ namespace QuaranTV
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -29,7 +32,25 @@ namespace QuaranTV
             services.AddMvc();
             services.AddControllers();
             services.AddDbContext<QuaranTvContext>();
-            services.AddScoped<IRepository<Comment>, CommentRepository>(); 
+            services.AddControllers().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
+            services.AddScoped<IRepository<Comment>, CommentRepository>();
+            services.AddScoped<IRepository<TvShow>, TvShowRepository>();
+            services.AddScoped<IRepository<User>, UserRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:8080",
+                                        "https://localhost:8080")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
 
         }
 
@@ -40,6 +61,10 @@ namespace QuaranTV
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
