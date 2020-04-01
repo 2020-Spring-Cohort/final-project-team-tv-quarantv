@@ -7,7 +7,11 @@ namespace QuaranTV.Models
 {
     public class TvShow
     {
-        public int Id { get; set; }
+        public int TvShowId { get; set; }
         public string Name { get; set; }
+        public string Image { get; set; }
+        public int Season { get; set; }
+        //public int Episode { get; set; }
+        public string Rating { get; set; }
     }
 }
