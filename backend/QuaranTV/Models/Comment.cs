@@ -8,15 +8,17 @@ namespace QuaranTV.Models
 {
     public class Comment
     {
-        public int CommentId { get; set; }
+        public int Id { get; set; }
         public string Body { get; set; }
         public string Rating { get; set; }
-
-        public virtual ICollection<User> Users { get; set; }
+        [JsonIgnore]
+        public virtual User User { get; set; }
+        public virtual int UserId { get; set; }
 
         [JsonIgnore]
         public virtual TvShow TvShow { get; set; }
         public virtual int TvShowId { get; set; }
+        
 
         public Comment()
         {
@@ -24,7 +26,7 @@ namespace QuaranTV.Models
 
         public Comment(int id, string body, string rating)
         {
-            CommentId = id;
+            Id = id;
             Body = body;
             Rating = rating;
         }
