@@ -9,7 +9,7 @@ namespace QuaranTV.Models
     public class TvShow
     {
         public int TvShowId { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string Image { get; set; }
         public int Season { get; set; }
         public string Rating { get; set; }
@@ -18,6 +18,8 @@ namespace QuaranTV.Models
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<User> Users { get; set; }
 
+        public IList<UserTvShow> UserTvShows { get; set; }
+
         public TvShow()
         {
         }
@@ -25,7 +27,7 @@ namespace QuaranTV.Models
         public TvShow(int id, string name, string image, int season, string rating)
         {
             TvShowId = id;
-            Name = name;
+            Title = title;
             Image = image;
             Season = season;
             Rating = rating;

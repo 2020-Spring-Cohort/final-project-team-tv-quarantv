@@ -16,6 +16,8 @@ namespace QuaranTV.Models
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<TvShow> TvShows { get; set; }
 
+        public IList<UserTvShow> UserTvShows { get; set; }
+
         public User()
         {
         }
