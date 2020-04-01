@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using QuaranTV.Models;
+using QuaranTV.Repositories;
 
 namespace QuaranTV.Controllers
 {
@@ -11,36 +13,50 @@ namespace QuaranTV.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        // GET: api/User
+        IRepository<User> userRepo;
+
+        public UserController(IRepository<User> userRepo)
+        {
+            this.userRepo = userRepo;
+        }
+
+        // GET: api/Placeholder
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return userRepo.GetAll();
         }
 
-        // GET: api/User/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        // GET: api/Placeholder/5
+        [HttpGet("{id}")]
+        public User Get(int id)
         {
-            return "value";
+            return userRepo.GetById(id);
         }
 
-        // POST: api/User
+        // POST: api/Placeholder
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<User> Post([FromBody] User value)
         {
+            userRepo.Create(value);
+            return userRepo.GetAll();
         }
 
-        // PUT: api/User/5
+        // PUT: api/Placeholder/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<User> Put([FromBody] User value)
         {
+            userRepo.Update(value);
+            return userRepo.GetAll();
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<User> Delete(int id)
         {
+            var user = userRepo.GetById(id);
+            userRepo.Delete(user);
+            return userRepo.GetAll();
         }
     }
 }
