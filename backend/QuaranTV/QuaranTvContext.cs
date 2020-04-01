@@ -11,7 +11,6 @@ namespace QuaranTV
     {
         public DbSet<User> Users { get; set; }
         public DbSet<TvShow> TvShows { get; set; }
-        public DbSet<Movie> Movies { get; set; }
         public DbSet<Comment> Comments { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
