@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace QuaranTV.Models
 {
@@ -11,7 +12,23 @@ namespace QuaranTV.Models
         public string Name { get; set; }
         public string Image { get; set; }
         public int Season { get; set; }
-        //public int Episode { get; set; }
         public string Rating { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<User> Users { get; set; }
+
+        public TvShow()
+        {
+        }
+
+        public TvShow(int id, string name, string image, int season, string rating)
+        {
+            TvShowId = id;
+            Name = name;
+            Image = image;
+            Season = season;
+            Rating = rating;
+        }
     }
 }
