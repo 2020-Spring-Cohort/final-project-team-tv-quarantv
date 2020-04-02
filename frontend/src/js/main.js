@@ -12,13 +12,13 @@ import Home from "./components/Home";
 export default pageBuild
 
 function pageBuild(){
-    header();
-    home();
+    header();    
     navbar();
     footer();
     navUsers();
     navTvShows();
     aboutUs();
+    home();
 }
 
 function header() {
@@ -42,9 +42,9 @@ function aboutUs() {
     })
 }
 function home() {
-    const homepage = document.querySelector('.nav__home');
+    const homeNav = document.querySelector('.nav__home');
     const mainDiv = document.querySelector('.main_div');
-    aboutUs.addEventListener('click', function(){
+    homeNav.addEventListener('click', function(){
         mainDiv.innerHTML = Home();
     })
 }
