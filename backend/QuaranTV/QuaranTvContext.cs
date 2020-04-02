@@ -22,6 +22,7 @@ namespace QuaranTV
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // TV Shows
             modelBuilder.Entity<TvShow>().HasData(
                 new TvShow
                 {
@@ -116,8 +117,83 @@ namespace QuaranTV
                     Id = 12,
                     Title = "Altered Carbon",
                     Image = "alteredcarbon.jpg",
-                    Season = 1,
+                    Season = 2,
                     ViewerDiscretion = "TV-MA"
+                },
+                new TvShow
+                {
+                    Id = 13,
+                    Title = "New Girl",
+                    Image = "newgirl.jpg",
+                    Season = 7,
+                    ViewerDiscretion = "TV-14"
+                },
+                new TvShow
+                {
+                    Id = 14,
+                    Title = "Blind Spot",
+                    Image = "blindspot.jpg",
+                    Season = 5,
+                    ViewerDiscretion = "TV-14"
+                },
+                new TvShow
+                {
+                    Id = 15,
+                    Title = "The Amazing Race",
+                    Image = "theamazingrace.jpg",
+                    Season = 32,
+                    ViewerDiscretion = "TV-PG"
+                });
+
+            // Users
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1,
+                    Name = "Dan",
+                    Image = "dan.jpg"
+                },
+                new User
+                {
+                    Id = 2,
+                    Name = "Nabil",
+                    Image = "nabil.jpg"
+                },
+                new User
+                {
+                    Id = 3,
+                    Name = "Tatyana",
+                    Image = "tatyana.jpg"
+                },
+                new User
+                {
+                    Id = 4,
+                    Name = "Erin",
+                    Image = "erin.jpg"
+                },
+                new User
+                {
+                    Id = 5,
+                    Name = "Eric",
+                    Image = "eric.jpg"
+                },
+                new User
+                {
+                    Id = 6,
+                    Name = "Ghassan",
+                    Image = "ghassan.jpg"
+                },
+                new User
+                {
+                    Id = 7,
+                    Name = "Karlyn",
+                    Image = "karlyn.jpg"
+                },
+                new User
+                {
+                    Id = 8,
+                    Name = "Carlton",
+                    Image = "carlton.jpg"
                 });
             base.OnModelCreating(modelBuilder);
         }
