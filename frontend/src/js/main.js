@@ -13,6 +13,7 @@ export default pageBuild
 
 function pageBuild(){
     header();
+    home();
     navbar();
     footer();
     navUsers();
@@ -28,6 +29,7 @@ function navbar() {
     const navbar = document.querySelector('.navbar');
     navbar.innerHTML = Navbar();
 }
+
 function footer() {
     const footer = document.querySelector('.footer');
     footer.innerHTML = Footer();
@@ -37,6 +39,13 @@ function aboutUs() {
     const mainDiv = document.querySelector('.main_div');
     aboutUs.addEventListener('click', function(){
         mainDiv.innerHTML = AboutUs();
+    })
+}
+function home() {
+    const homepage = document.querySelector('.nav__home');
+    const mainDiv = document.querySelector('.main_div');
+    aboutUs.addEventListener('click', function(){
+        mainDiv.innerHTML = Home();
     })
 }
 
