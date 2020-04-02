@@ -39,6 +39,8 @@ namespace QuaranTV
             services.AddScoped<IRepository<Comment>, CommentRepository>();
             services.AddScoped<IRepository<TvShow>, TvShowRepository>();
             services.AddScoped<IRepository<User>, UserRepository>();
+            services.AddScoped<IRepository<UserTvShow>, UserTvShowRepository>();
+
 
             services.AddCors(options =>
             {
