@@ -14,11 +14,18 @@ namespace QuaranTV.Models
         public int Season { get; set; }
         public string ViewerDiscretion { get; set; }
 
+
+
+
+
         [JsonIgnore]
         public virtual ICollection<Comment> Comments { get; set; }
 
         [JsonIgnore]
         public virtual IList<UserTvShow> UserTvShows { get; set; }
+
+
+
 
         public TvShow()
         {

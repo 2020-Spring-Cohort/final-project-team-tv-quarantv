@@ -12,11 +12,18 @@ namespace QuaranTV.Models
         public string Name { get; set; }
         public string Image { get; set; }
 
+
+
+
         [JsonIgnore]
         public virtual ICollection<Comment> Comments { get; set; }
 
         [JsonIgnore]
         public virtual IList<UserTvShow> UserTvShows { get; set; }
+
+
+
+
 
         public User()
         {

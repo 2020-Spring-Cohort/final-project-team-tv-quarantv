@@ -12,6 +12,9 @@ namespace QuaranTV.Models
         public string Body { get; set; }
         public string Rating { get; set; }
 
+
+
+
         [JsonIgnore]
         public virtual User User { get; set; }
         public int UserId { get; set; }
@@ -20,6 +23,8 @@ namespace QuaranTV.Models
         public virtual TvShow TvShow { get; set; }
         public int TvShowId { get; set; }
         
+
+
 
         public Comment()
         {
