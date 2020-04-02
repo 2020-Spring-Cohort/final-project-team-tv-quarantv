@@ -54,7 +54,7 @@ function navUsers() {
     const mainDiv = document.querySelector(".main_div");
 
     usersNavButton.addEventListener("click", function(){
-         apiActions.getRequest("https://localhost:44313/api/User",
+         apiActions.getRequest("http://localhost:51880/api/User",
             users => {
                 console.log(users);
                 mainDiv.innerHTML = Users(users);
@@ -68,7 +68,7 @@ function navTvShows() {
     const mainDiv = document.querySelector(".main_div");
 
     tvShowsNavButton.addEventListener("click", function(){
-         apiActions.getRequest("https://localhost:44313/api/TvShow",
+         apiActions.getRequest("http://localhost:51880/api/TvShow",
             tvShows => {
                 console.log(tvShows);
                 mainDiv.innerHTML = TvShows(tvShows);
