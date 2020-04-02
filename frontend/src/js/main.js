@@ -4,6 +4,10 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Users from "./components/Users";
+import TvShows from "./components/TvShows";
+import AboutUs from "./components/AboutUs";
+import Home from "./components/Home";
+
 
 export default pageBuild
 
@@ -12,6 +16,8 @@ function pageBuild(){
     navbar();
     footer();
     navUsers();
+    navTvShows();
+    aboutUs();
 }
 
 function header() {
@@ -25,6 +31,13 @@ function navbar() {
 function footer() {
     const footer = document.querySelector('.footer');
     footer.innerHTML = Footer();
+}
+function aboutUs() {
+    const aboutUs = document.querySelector('.nav__aboutus');
+    const mainDiv = document.querySelector('.main_div');
+    aboutUs.addEventListener('click', function(){
+        mainDiv.innerHTML = AboutUs();
+    })
 }
 
 function navUsers() {
@@ -40,3 +53,18 @@ function navUsers() {
         )
     })
 }
+
+function navTvShows() {
+    const tvShowsNavButton = document.querySelector(".nav__tvshows");
+    const mainDiv = document.querySelector(".main_div");
+
+    tvShowsNavButton.addEventListener("click", function(){
+         apiActions.getRequest("https://localhost:44313/api/TvShow",
+            tvShows => {
+                console.log(tvShows);
+                mainDiv.innerHTML = TvShows(tvShows);
+            }
+        )
+    })
+}
+
