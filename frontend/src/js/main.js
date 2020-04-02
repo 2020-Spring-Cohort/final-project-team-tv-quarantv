@@ -24,3 +24,17 @@ function footer() {
     const footer = document.querySelector('.footer');
     footer.innerHTML = Footer();
 }
+
+function navUsers() {
+    const usersNavButton = document.querySelector(".nav__users");
+    const mainDiv = document.querySelector(".main_div");
+
+    usersNavButton.addEventListener("click", function(){
+        apiActions.getRequest("https://localhost:44313/api/User",
+            users => {
+                console.log(users);
+                mainDiv.innerHTML = Users(users);
+            }
+        )    
+    })
+}
