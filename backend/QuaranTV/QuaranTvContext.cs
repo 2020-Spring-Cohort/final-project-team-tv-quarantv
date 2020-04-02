@@ -195,6 +195,57 @@ namespace QuaranTV
                     Name = "Carlton",
                     Image = "carlton.jpg"
                 });
+
+            // Comments
+            modelBuilder.Entity<Comment>().HasData(
+                new Comment
+                {
+                    Id = 1,
+                    Body = "placeholder text",
+                    Rating = "placeholder rating",
+                    TvShowId = 12,
+                    UserId = 2
+                },
+                new Comment
+                {
+                    Id = 2,
+                    Body = "placeholder text",
+                    Rating = "placeholder rating",
+                    TvShowId = 15,
+                    UserId = 7
+                },
+                new Comment
+                {
+                    Id = 3,
+                    Body = "placeholder text",
+                    Rating = "placeholder rating",
+                    TvShowId = 13,
+                    UserId = 3
+                },
+                new Comment
+                {
+                    Id = 4,
+                    Body = "placeholder text",
+                    Rating = "placeholder rating",
+                    TvShowId = 3,
+                    UserId = 4
+                },
+                new Comment
+                {
+                    Id = 5,
+                    Body = "placeholder text",
+                    Rating = "placeholder rating",
+                    TvShowId = 8,
+                    UserId = 4
+                },
+                new Comment
+                {
+                    Id = 6,
+                    Body = "placeholder text",
+                    Rating = "placeholder rating",
+                    TvShowId = 15,
+                    UserId = 2
+                });
             base.OnModelCreating(modelBuilder);
         }
     }
