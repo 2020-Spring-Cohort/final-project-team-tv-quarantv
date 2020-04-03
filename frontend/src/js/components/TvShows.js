@@ -5,7 +5,7 @@ export default function TvShows(tvShows){
             ${tvShows.map(tvShow => {
                 return `
                 <div class="tvShows__specific_tvShow"
-                    <h4 class="tvShow__name_btn">${tvShow.title}</h4>
+                    <h4 class="tvShows__show_title">${tvShow.title}</h4>
                     <input class="tvShow__id" type="hidden" value="${tvShow.id}">
                 </div>
                `

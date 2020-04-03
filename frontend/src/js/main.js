@@ -45,7 +45,6 @@ function home() {
     const homeNav = document.querySelector('.nav__home');
     const mainDiv = document.querySelector('.main_div');
     homeNav.addEventListener('click', function(){
-        console.log('hi')
         mainDiv.innerHTML = Home();
     })
 }
@@ -79,8 +78,8 @@ function navTvShows() {
 
     mainDiv.addEventListener('click', function(){
         if(event.target.classList.contains('tvShows__specific_tvShow')){
-            const tvshowid = event.target.parentElement.querySelector('.tvShow__id').value
-            console.log(tvshowid)
+            const tvShowId = event.target.querySelector('.tvShow__id').value;
+            console.log(tvShowId);
         }
     })
 }
