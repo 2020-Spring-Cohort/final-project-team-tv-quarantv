@@ -11,8 +11,7 @@ namespace QuaranTV
     {
         public DbSet<User> Users { get; set; }
         public DbSet<TvShow> TvShows { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<UserTvShow> UserTvShows { get; set; }
+        public DbSet<Watchlist> Watchlists { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=QuaranTv;Trusted_Connection=True;";
@@ -22,6 +21,7 @@ namespace QuaranTV
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             // TV Shows
             modelBuilder.Entity<TvShow>().HasData(
                 new TvShow
@@ -29,7 +29,7 @@ namespace QuaranTV
                     Id = 1,
                     Title = "Friends",
                     Image = "friends.jpg",
-                    Season = 10,
+                    Season = "10",
                     ViewerDiscretion = "TV-14"
                 },
                 new TvShow
@@ -37,7 +37,7 @@ namespace QuaranTV
                     Id = 2,
                     Title = "Game of Thrones",
                     Image = "gameofthrones.jpg",
-                    Season = 8,
+                    Season = "8",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
@@ -45,7 +45,7 @@ namespace QuaranTV
                     Id = 3,
                     Title = "The Marvelous Mrs. Maisel",
                     Image = "maisel.jpg",
-                    Season = 4,
+                    Season = "4",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
@@ -53,7 +53,7 @@ namespace QuaranTV
                     Id = 4,
                     Title = "Ozark",
                     Image = "ozark.jpg",
-                    Season = 3,
+                    Season = "3",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
@@ -61,7 +61,7 @@ namespace QuaranTV
                     Id = 5,
                     Title = "The Fresh Prince",
                     Image = "freshprince.jpg",
-                    Season = 6,
+                    Season = "6",
                     ViewerDiscretion = "TV-PG"
                 },
                 new TvShow
@@ -69,7 +69,7 @@ namespace QuaranTV
                     Id = 6,
                     Title = "The Golden Girls",
                     Image = "goldengirls.jpg",
-                    Season = 7,
+                    Season = "7",
                     ViewerDiscretion = "TV-PG"
                 },
                 new TvShow
@@ -77,7 +77,7 @@ namespace QuaranTV
                     Id = 7,
                     Title = "Tiger King",
                     Image = "tigerking.jpg",
-                    Season = 1,
+                    Season = "1",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
@@ -85,7 +85,7 @@ namespace QuaranTV
                     Id = 8,
                     Title = "Stranger Things",
                     Image = "strangerthings.jpg",
-                    Season = 4,
+                    Season = "4",
                     ViewerDiscretion = "TV-14"
                 },
                 new TvShow
@@ -93,7 +93,7 @@ namespace QuaranTV
                     Id = 9,
                     Title = "Dear White People",
                     Image = "dearwhitepeople.jpg",
-                    Season = 4,
+                    Season = "4",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
@@ -101,7 +101,7 @@ namespace QuaranTV
                     Id = 10,
                     Title = "The Mandalorian",
                     Image = "mandalorian.jpg",
-                    Season = 1,
+                    Season = "1",
                     ViewerDiscretion = "TV-PG"
                 },
                 new TvShow
@@ -109,7 +109,7 @@ namespace QuaranTV
                     Id = 11,
                     Title = "Atlanta",
                     Image = "atlanta.jpg",
-                    Season = 3,
+                    Season = "3",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
@@ -117,32 +117,32 @@ namespace QuaranTV
                     Id = 12,
                     Title = "Altered Carbon",
                     Image = "alteredcarbon.jpg",
-                    Season = 2,
+                    Season = "2",
                     ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
                 {
                     Id = 13,
-                    Title = "New Girl",
-                    Image = "newgirl.jpg",
-                    Season = 7,
-                    ViewerDiscretion = "TV-14"
+                    Title = "The Amazing Race",
+                    Image = "theamazingrace.jpg",
+                    Season = "32",
+                    ViewerDiscretion = "TV-PG"
                 },
                 new TvShow
                 {
                     Id = 14,
-                    Title = "Blind Spot",
-                    Image = "blindspot.jpg",
-                    Season = 5,
-                    ViewerDiscretion = "TV-14"
+                    Title = "Daredevil",
+                    Image = "daredevil.jpg",
+                    Season = "3",
+                    ViewerDiscretion = "TV-MA"
                 },
                 new TvShow
                 {
                     Id = 15,
-                    Title = "The Amazing Race",
-                    Image = "theamazingrace.jpg",
-                    Season = 32,
-                    ViewerDiscretion = "TV-PG"
+                    Title = "The Witcher",
+                    Image = "thewitcher.jpg",
+                    Season = "1",
+                    ViewerDiscretion = "TV-MA"
                 });
 
             // Users
@@ -194,57 +194,6 @@ namespace QuaranTV
                     Id = 8,
                     Name = "Carlton",
                     Image = "carlton.jpg"
-                });
-
-            // Comments
-            modelBuilder.Entity<Comment>().HasData(
-                new Comment
-                {
-                    Id = 1,
-                    Body = "placeholder text",
-                    Rating = "placeholder rating",
-                    TvShowId = 12,
-                    UserId = 2
-                },
-                new Comment
-                {
-                    Id = 2,
-                    Body = "placeholder text",
-                    Rating = "placeholder rating",
-                    TvShowId = 15,
-                    UserId = 7
-                },
-                new Comment
-                {
-                    Id = 3,
-                    Body = "placeholder text",
-                    Rating = "placeholder rating",
-                    TvShowId = 13,
-                    UserId = 3
-                },
-                new Comment
-                {
-                    Id = 4,
-                    Body = "placeholder text",
-                    Rating = "placeholder rating",
-                    TvShowId = 3,
-                    UserId = 4
-                },
-                new Comment
-                {
-                    Id = 5,
-                    Body = "placeholder text",
-                    Rating = "placeholder rating",
-                    TvShowId = 8,
-                    UserId = 4
-                },
-                new Comment
-                {
-                    Id = 6,
-                    Body = "placeholder text",
-                    Rating = "placeholder rating",
-                    TvShowId = 15,
-                    UserId = 2
                 });
             base.OnModelCreating(modelBuilder);
         }

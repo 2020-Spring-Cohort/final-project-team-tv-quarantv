@@ -6,9 +6,12 @@ using System.Text.Json.Serialization;
 
 namespace QuaranTV.Models
 {
-    public class UserTvShow
+    public class Watchlist
     {
         public int Id { get; set; }
+        public string Status { get; set; }
+        public string Review { get; set; }
+        public string Rating { get; set; }
 
 
 
@@ -20,5 +23,19 @@ namespace QuaranTV.Models
         [JsonIgnore]
         public virtual TvShow TvShow { get; set; }
         public int TvShowId { get; set; }
+        
+
+
+
+        public Watchlist()
+        {
+        }
+
+        public Watchlist(int id, string review, string rating)
+        {
+            Id = id;
+            Review = review;
+            Rating = rating;
+        }
     }
 }

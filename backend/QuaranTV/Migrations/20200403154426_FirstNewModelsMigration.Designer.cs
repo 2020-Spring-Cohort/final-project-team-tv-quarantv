@@ -9,8 +9,8 @@ using QuaranTV;
 namespace QuaranTV.Migrations
 {
     [DbContext(typeof(QuaranTvContext))]
-    [Migration("20200401190700_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20200403154426_FirstNewModelsMigration")]
+    partial class FirstNewModelsMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,34 +19,6 @@ namespace QuaranTV.Migrations
                 .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("QuaranTV.Models.Comment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Body")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Rating")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TvShowId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TvShowId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Comments");
-                });
 
             modelBuilder.Entity("QuaranTV.Models.TvShow", b =>
                 {
@@ -58,8 +30,8 @@ namespace QuaranTV.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Season")
-                        .HasColumnType("int");
+                    b.Property<string>("Season")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -90,12 +62,21 @@ namespace QuaranTV.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("QuaranTV.Models.UserTvShow", b =>
+            modelBuilder.Entity("QuaranTV.Models.Watchlist", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Rating")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Review")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TvShowId")
                         .HasColumnType("int");
@@ -109,34 +90,19 @@ namespace QuaranTV.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserTvShows");
+                    b.ToTable("Watchlists");
                 });
 
-            modelBuilder.Entity("QuaranTV.Models.Comment", b =>
+            modelBuilder.Entity("QuaranTV.Models.Watchlist", b =>
                 {
                     b.HasOne("QuaranTV.Models.TvShow", "TvShow")
-                        .WithMany("Comments")
+                        .WithMany("Watchlists")
                         .HasForeignKey("TvShowId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("QuaranTV.Models.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("QuaranTV.Models.UserTvShow", b =>
-                {
-                    b.HasOne("QuaranTV.Models.TvShow", "TvShow")
-                        .WithMany("UserTvShows")
-                        .HasForeignKey("TvShowId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QuaranTV.Models.User", "User")
-                        .WithMany("UserTvShows")
+                        .WithMany("Watchlists")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
