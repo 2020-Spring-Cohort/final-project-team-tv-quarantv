@@ -41,5 +41,25 @@ namespace QuaranTV.Tests
             Assert.Equal(2, countOfUsers);
         }
 
+        [Fact]
+        public void GetById_Should_Return_Chosen_User()
+        {
+            //arrange
+            var id = 2;
+            var firstUser = new User(1,"Tatyana","tatyana.jpg");
+            var secondUser = new User(2,"Erin","erin.jpg");
+            var expectedUsers = new List<User>();
+            expectedUsers.Add(firstUser);
+            expectedUsers.Add(secondUser);
+
+            userMockRepo.GetById(id).Returns(secondUser);
+
+            //act
+            var result = testController.Get(id);
+
+            //assert
+            Assert.Equal(secondUser, result);
+        }
+
     }
 }
