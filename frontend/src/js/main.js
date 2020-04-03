@@ -7,8 +7,6 @@ import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
-import TvShowSelection from "./components/TvShowSelection";
-
 
 
 export default pageBuild

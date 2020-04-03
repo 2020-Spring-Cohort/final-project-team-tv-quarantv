@@ -1,7 +1,7 @@
 export default function Navbar() {
 return `
 <nav class='navbar_list'>
-         <div class='nav'>
+         <div class='navbar'>
          <div class='nav__home'>Home</div>
          <div class='nav__users'>Users</div>
          <div class='nav__tvshows'>Tv Shows</div>
