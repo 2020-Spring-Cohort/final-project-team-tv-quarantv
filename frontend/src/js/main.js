@@ -77,5 +77,12 @@ function navTvShows() {
             }
         )
     })
+
+    mainDiv.AddEventListener('click', function(){
+        if(event.target.classList.contains('tvShows__specific_tvShow')){
+            const tvshowid = event.target.parentElement.querySelector('.tvShow__id').value
+            console.log(tvshowid)
+        }
+    })
 }
 
