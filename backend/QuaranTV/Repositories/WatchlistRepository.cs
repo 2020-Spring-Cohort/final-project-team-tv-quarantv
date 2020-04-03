@@ -6,9 +6,9 @@ using QuaranTV.Models;
 
 namespace QuaranTV.Repositories
 {
-    public class CommentRepository : Repository<Comment>, IRepository<Comment>
+    public class WatchlistRepository : Repository<Watchlist>, IRepository<Watchlist>
     {
-        public CommentRepository(QuaranTvContext context) : base(context)
+        public WatchlistRepository(QuaranTvContext context) : base(context)
         {
         }
     }

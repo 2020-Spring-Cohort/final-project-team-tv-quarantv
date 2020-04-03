@@ -36,10 +36,9 @@ namespace QuaranTV
             {
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
-            services.AddScoped<IRepository<Comment>, CommentRepository>();
+            services.AddScoped<IRepository<Watchlist>, WatchlistRepository>();
             services.AddScoped<IRepository<TvShow>, TvShowRepository>();
             services.AddScoped<IRepository<User>, UserRepository>();
-            services.AddScoped<IRepository<UserTvShow>, UserTvShowRepository>();
 
 
             services.AddCors(options =>
