@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
+import TvShowSelection from "./components/TvShowSelection";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -80,6 +81,13 @@ function navTvShows() {
         if(event.target.classList.contains('tvShows__specific_tvShow')){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
             console.log(tvShowId);
+
+            apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
+            tvShow => {
+                console.log(tvShow);
+                mainDiv.innerHTML = TvShowSelection(tvShow);
+            }
+        )
         }
     })
 }
