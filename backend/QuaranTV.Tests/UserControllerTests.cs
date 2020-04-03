@@ -60,6 +60,27 @@ namespace QuaranTV.Tests
             //assert
             Assert.Equal(secondUser, result);
         }
+        [Fact]
+        public void Post_Creates_New_User()
+        {
+            // arrange
+            var newUser = new User(1, "Tatyana", "tatyana.jpg");
+            var userList = new List<User>();
+
+            // Use When..Do to substitute for methods that don't return a value, like the Repository method Create()
+            // When() allows us to call the method on the substitute and pass an argument
+            // Do() allows us to pass a callback function that executes when the method is called
+            userMockRepo.When(t => t.Create(newUser))
+                .Do(t => userList.Add(newUser));
+
+            userMockRepo.GetAll().Returns(userList);
+
+            // act
+            var result = testController.Post(newUser);
+
+            // assert
+            Assert.Contains(newUser, result);
+        }
 
     }
 }
