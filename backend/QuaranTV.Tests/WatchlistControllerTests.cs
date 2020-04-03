@@ -41,5 +41,46 @@ namespace QuaranTV.Tests
             Assert.Equal(2, countOfWatchlists);
         }
 
+        [Fact]
+        public void GetById_Should_Return_Chosen_Watchlist()
+        {
+            //arrange
+            var id = 2;
+            var firstWatchlist = new Watchlist(1, "test review", "test rating");
+            var secondWatchlist = new Watchlist(1, "test review", "test rating");
+            var expectedWatchlists = new List<Watchlist>();
+            expectedWatchlists.Add(firstWatchlist);
+            expectedWatchlists.Add(secondWatchlist);
+
+            watchlistMockRepo.GetById(id).Returns(secondWatchlist);
+
+            //act
+            var result = testController.Get(id);
+
+            //assert
+            Assert.Equal(secondWatchlist, result);
+        }
+        [Fact]
+        public void Post_Creates_New_Watchlist()
+        {
+            // arrange
+            var newWatchlist = new Watchlist(1, "test review", "test rating");
+            var watchlistList = new List<Watchlist>();
+
+            // Use When..Do to substitute for methods that don't return a value, like the Repository method Create()
+            // When() allows us to call the method on the substitute and pass an argument
+            // Do() allows us to pass a callback function that executes when the method is called
+            watchlistMockRepo.When(t => t.Create(newWatchlist))
+                .Do(t => watchlistList.Add(newWatchlist));
+
+            watchlistMockRepo.GetAll().Returns(watchlistList);
+
+            // act
+            var result = testController.Post(newWatchlist);
+
+            // assert
+            Assert.Contains(newWatchlist, result);
+        }
+
     }
 }
