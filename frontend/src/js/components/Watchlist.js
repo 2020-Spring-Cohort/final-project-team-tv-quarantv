@@ -2,7 +2,7 @@ export default function Watchlist(user){
     return `
     <div class="watchlist_header">
         <h2>${user.name}'s Watchlist</h2>
-        <input class="user__id" type="hidden" value="${user.id}">        
+        <input class="user__id" type="hidden" value="${user.id}>
     </div>
 
     <section class="watchlist__main">
