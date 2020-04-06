@@ -1,13 +1,21 @@
 export default function WatchlistAddShow(tvShows) {
     return `
-    
-    <select class="watchlist_add_show__show-id" type="dropdown">
+    <p>Choose a show</p>
+    <select class="watchlistaddshow__show_id" type="dropdown">
     ${tvShows.map(tvShow => {
         return `
             <option value=${tvShow.id}>${tvShow.title}</option>
             `
         })}
     </select>
-
+    <p>Choose a status</p>
+    <select class="watchlistaddshow__status_choice" type="dropdown">
+        <option value="Watched">Watched</option>
+        <option value="Watching">Watching</option>
+        <option value="ToBeWatched">To Be Watched"</option>
+    </select>
+    <div><br><br>
+    <button class="watchlistaddshow__submit">Add show to watchlist</button>
+    </div>
     `
 }
