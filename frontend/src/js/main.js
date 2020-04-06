@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
+import WatchlistHeader from "./components/WatchlistHeader";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -61,6 +62,18 @@ function navUsers() {
                 mainDiv.innerHTML = Users(users);
             }
         )
+    })
+
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains('users__specific_user')){
+            const userId = event.target.querySelector('.user__id').value;
+            
+            apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
+            user => {
+                console.log(user);
+                mainDiv.innerHTML = WatchlistHeader(user);
+            }
+        )}
     })
 }
 
