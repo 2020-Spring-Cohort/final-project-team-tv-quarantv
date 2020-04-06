@@ -59,7 +59,6 @@ function navUsers() {
     usersNavButton.addEventListener("click", function(){
          apiActions.getRequest("http://localhost:51880/api/User",
             users => {
-                console.log(users);
                 mainDiv.innerHTML = Users(users);
             }
         )
@@ -71,7 +70,6 @@ function navUsers() {
             
             apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
             user => {
-                console.log(user);
                 mainDiv.innerHTML = Watchlist(user);
             }
         )}
@@ -82,10 +80,24 @@ function navUsers() {
         if(event.target.classList.contains('watchlist__add_show_button')){
             apiActions.getRequest("http://localhost:51880/api/TvShow",
                 tvShows => {
-                    console.log(tvShows);
                     watchlistAddShowSection.innerHTML = WatchlistAddShow(tvShows);
                 }
             )
+        }
+    })
+
+    mainDiv.addEventListener("click", function(){
+        if(event.target.classList.contains('watchlistaddshow__submit')){
+            const userId = document.querySelector('.user__id').value;
+            const tvShowId = event.target.parentElement.querySelector('.watchlistaddshow__show_id').value;
+            const status = event.target.parentElement.querySelector('.watchlistaddshow__status_choice').value;
+            
+            var requestBody = {
+                Status: status,
+                UserId: userId,
+                TvShowId: tvShowId
+            }
+            console.log(requestBody);
         }
     })
 }
