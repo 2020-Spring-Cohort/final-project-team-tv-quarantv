@@ -6,8 +6,6 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
-import Watchlist from "./components/Watchlist";
-import WatchlistAddShow from "./components/WatchlistAddShow";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -51,7 +49,7 @@ function home() {
         mainDiv.innerHTML = Home();
     })
 }
-
+/// GOES TO ALL USERS VIEW FROM NAV BAR
 function navUsers() {
     const usersNavButton = document.querySelector(".nav__users");
     const mainDiv = document.querySelector(".main_div");
@@ -64,32 +62,8 @@ function navUsers() {
             }
         )
     })
-
-    mainDiv.addEventListener("click", function() {
-        if(event.target.classList.contains('users__specific_user')){
-            const userId = event.target.querySelector('.user__id').value;
-            
-            apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
-            user => {
-                console.log(user);
-                mainDiv.innerHTML = Watchlist(user);
-            }
-        )}
-    })
-
-    mainDiv.addEventListener("click", function() {
-        const watchlistAddShowSection = mainDiv.querySelector(".watchlist__add_show");
-        if(event.target.classList.contains('watchlist__add_show_button')){
-            apiActions.getRequest("http://localhost:51880/api/TvShow",
-                tvShows => {
-                    console.log(tvShows);
-                    watchlistAddShowSection.innerHTML = WatchlistAddShow(tvShows);
-                }
-            )
-        }
-    })
 }
-
+/// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
     const mainDiv = document.querySelector(".main_div");
@@ -102,7 +76,7 @@ function navTvShows() {
             }
         )
     })
-
+/// TAKES YOU TO SPECIFIC TV SHOW VIEW
     mainDiv.addEventListener('click', function(){
         if(event.target.classList.contains('tvShows__specific_tvShow')){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
