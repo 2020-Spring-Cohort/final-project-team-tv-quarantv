@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
-import WatchlistHeader from "./components/WatchlistHeader";
+import Watchlist from "./components/WatchlistHeader";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -71,7 +71,7 @@ function navUsers() {
             apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
             user => {
                 console.log(user);
-                mainDiv.innerHTML = WatchlistHeader(user);
+                mainDiv.innerHTML = Watchlist(user);
             }
         )}
     })
