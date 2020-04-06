@@ -1,3 +1,16 @@
+#allpics {
+    display: grid;
+    grid-template-columns: repeat(2, );
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    width: 50%;
+}
+
+#allpics img {
+    width: 10%;
+    border-radius: 48%;
+}
+
 .users__user_image {
     max-height: 100px;
 }
