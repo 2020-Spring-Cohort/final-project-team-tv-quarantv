@@ -1,18 +1,16 @@
 #allpics {
     display: grid;
-    grid-template-columns: repeat(2, );
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    grid-column-gap: 20px;
-    width: 50%;
-}
-
-#allpics img {
-    width: 10%;
+    grid-column-gap: 1.25em;
+    grid-row-gap: 2.5em;
+    width: 30%;
     border-radius: 48%;
+    text-align: center;
 }
 
 .users__user_image {
-    max-height: 100px;
+    width: 100px;
 }
 
 .tvShow__image {

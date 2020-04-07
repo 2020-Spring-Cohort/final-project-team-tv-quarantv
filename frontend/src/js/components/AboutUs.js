@@ -8,4 +8,4 @@ export default function AboutUs() {
     <a href="https://www.linkedin.com/in/eric-drexler/" target="_blank"><img src="./img/users/eric.jpg" class="users__user_image"></a>
     </div>
     `
-}
+} 
