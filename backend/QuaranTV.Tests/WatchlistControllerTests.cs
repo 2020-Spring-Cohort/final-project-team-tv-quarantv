@@ -107,6 +107,32 @@ namespace QuaranTV.Tests
             Assert.DoesNotContain(deletedWatchlist, result);
         }
 
+        [Fact]
+        public void Put_Updates_Watchlist_Reviews()
+        {
+            // arrange
+            var originalWatchlist = new Watchlist(1, "test review", "test rating");
+            var expectedWatchlist = new List<Watchlist>()
+            {
+                originalWatchlist
+            };
+            var updatedWatchlist = new Watchlist(2, "test updated review", "test rating");
 
+            // What are the dependencies for the controller's Update action?
+            // They are Update() and GetAll()
+            // To mock Update() we need to modify our fake list with the Remove() then Add() methods 
+            watchlistMockRepo.When(t => watchlistMockRepo.Update(updatedWatchlist))
+                .Do(Callback.First(t => expectedWatchlist.Remove(originalWatchlist))
+                .Then(t => expectedWatchlist.Add(updatedWatchlist)));
+            watchlistMockRepo.GetAll().Returns(expectedWatchlist);
+
+            // act
+            var result = testController.Put(updatedWatchlist);
+
+            // assert
+            // Below is an alternative to Assert.Equal(expectedTodos, result.ToList());
+            //Assert.All(result, item => Assert.Contains("First Watchlist Update", item.Title));
+            Assert.Equal(expectedWatchlist, result.ToList());
+        }
     }
 }
