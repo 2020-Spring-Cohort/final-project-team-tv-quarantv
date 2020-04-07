@@ -1,5 +1,27 @@
 export default function WatchlistMain(watchlists) {
-    return `
+   var Watched = [];
+   var Watching = [];
+   var ToBeWatched = [];
+return `
+${watchlists.map(watchlist => {
+    if(watchlist.status == "Watched")
+    Watched.push(watchlist.tvShow.title);
+
+    if(watchlist.status == "Watching")
+    Watching.push(watchlist.tvShow.title);
+
+    if(watchlist.status == "ToBeWatched")
+    ToBeWatched.push(watchlist.tvShow.title);
+
+
+`
+})}.join("");
+   
+}
+
+
+/*
+ return `
     <div class="watchlist_main__container"
         <div class="watchlist_main__watched">
             <ol class="watched_list">
@@ -21,5 +43,7 @@ export default function WatchlistMain(watchlists) {
 
                 </div>
         </div> */
-    `
-}
+        `
+
+
+*/
