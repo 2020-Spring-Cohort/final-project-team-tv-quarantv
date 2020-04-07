@@ -102,9 +102,9 @@ function navUsers() {
             apiActions.postRequest(
                 "http://localhost:51880/api/Watchlist",
                 requestBody,
-                watchlists => {
-                    console.log(watchlists);
-                    mainDiv.innerHTML = WatchlistAddShow(watchlists);
+                watchlist => {
+                    console.log(watchlist);
+                    mainDiv.innerHTML = WatchlistAddShow(watchlist);
                 }
             )
         }
