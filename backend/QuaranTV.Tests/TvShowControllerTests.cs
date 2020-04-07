@@ -14,10 +14,10 @@ namespace QuaranTV.Tests
         TvShowController testController;
         IRepository<TvShow> tvShowMockRepo;
 
-        public TvShowControllerTests()
-        {
-            tvShowMockRepo = Substitute.For<IRepository><TvShow>>();
-            testController = new TvShowController(tvShowMockRepo);
-        }
+        //public TvShowControllerTests()
+        //{
+        //    tvShowMockRepo = Substitute.For<IRepository><TvShow>>();
+        //    testController = new TvShowController(tvShowMockRepo);
+        //}
     }
 }

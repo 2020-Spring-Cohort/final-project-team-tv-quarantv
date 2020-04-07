@@ -83,15 +83,15 @@ namespace QuaranTV.Tests
         }
 
         [Fact]
-        public void Delete_Removes_Watchlist()
+        public void Delete_Removes_Watchlist_Object()
         {
             // arrange
             var watchlistId = 1;
-            var deletedWatchlist = new Watchlist(1, "test review", "test rating");
+            var deletedWatchlist = new Watchlist(watchlistId, "test review", "test rating");
             var watchlistList = new List<Watchlist>()
             {
                 deletedWatchlist,
-                new Watchlist(1, "test review", "test rating")
+                new Watchlist(2, "test review", "test rating")
             };
             // our controller's Delete() action is dependent on the Repository's
             // GetById(), Delete(), and GetAll() actions- they all need to be mocked
@@ -104,7 +104,8 @@ namespace QuaranTV.Tests
             // assert
             // Below is an alternative to Assert.DoesNotContain(deletedTodo, result), 
             // which does not work in all cases
-            Assert.All(result, item => Assert.Contains("Second Watchlist", item.Status));
+            //Assert.All(result, item => Assert.Contains("Second Watchlist", item.Id));
+            Assert.DoesNotContain(deletedWatchlist, result);
         }
 
 
