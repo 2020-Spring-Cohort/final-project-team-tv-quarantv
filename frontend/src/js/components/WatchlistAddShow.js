@@ -10,9 +10,9 @@ export default function WatchlistAddShow(tvShows) {
     </select>
     <p>Choose a status</p>
     <select class="watchlistaddshow__status_choice" type="dropdown">
-        <option value="Watched">Watched</option>
         <option value="Watching">Watching</option>
         <option value="ToBeWatched">To Be Watched</option>
+        <option value="Watched">Watched</option>
     </select>
     <br><br>
     <button class="watchlistaddshow__submit">Add show to watchlist</button>
