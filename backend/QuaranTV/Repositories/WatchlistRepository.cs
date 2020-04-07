@@ -16,7 +16,7 @@ namespace QuaranTV.Repositories
 
         public IEnumerable<Watchlist> GetByUserId(int id)
         {
-            return db.Watchlists.Where(w => w.User.Id == id).ToList();
+            return db.Watchlists.Where(w => w.UserId == id).ToList();
         }
     }
 }
