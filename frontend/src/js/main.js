@@ -97,14 +97,14 @@ function navUsers() {
                 UserId: userId,
                 TvShowId: tvShowId
             }
-            // console.log(requestBody);
+            console.log(requestBody);
             // SAVES ADDED TV SHOW
             apiActions.postRequest(
                 "http://localhost:51880/api/Watchlist",
                 requestBody,
                 watchlist => {
                     console.log(watchlist);
-                    mainDiv.innerHTML = WatchlistAddShow(watchlist);
+                    mainDiv.innerHTML = WatchlistByUser(watchlist);
                 }
             )
         }
