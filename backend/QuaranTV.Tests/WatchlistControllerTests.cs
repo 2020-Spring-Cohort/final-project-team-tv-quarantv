@@ -104,7 +104,6 @@ namespace QuaranTV.Tests
             // assert
             // Below is an alternative to Assert.DoesNotContain(deletedTodo, result), 
             // which does not work in all cases
-            //Assert.All(result, item => Assert.Contains("Second Watchlist", item.Id));
             Assert.DoesNotContain(deletedWatchlist, result);
         }
 
