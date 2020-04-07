@@ -51,7 +51,7 @@ function home() {
         mainDiv.innerHTML = Home();
     })
 }
-
+//// GOES TO ALL USERS FROM NAV BAR
 function navUsers() {
     const usersNavButton = document.querySelector(".nav__users");
     const mainDiv = document.querySelector(".main_div");
@@ -63,7 +63,7 @@ function navUsers() {
             }
         )
     })
-
+/// GOES TO SPECIFIC USER FROM USERS VIEW
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains('users__specific_user')){
             const userId = event.target.querySelector('.user__id').value;
@@ -74,7 +74,7 @@ function navUsers() {
             }
         )}
     })
-
+/// DISPLAYS ADD TV SHOW OPTION
     mainDiv.addEventListener("click", function() {
         const watchlistAddShowSection = mainDiv.querySelector(".watchlist__add_show");
         if(event.target.classList.contains('watchlist__add_show_button')){
@@ -85,7 +85,7 @@ function navUsers() {
             )
         }
     })
-
+/// ADDS TV SHOW TO WATCHLIST
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('watchlistaddshow__submit')){
             const userId = document.querySelector('.user__id').value;
@@ -98,10 +98,19 @@ function navUsers() {
                 TvShowId: tvShowId
             }
             console.log(requestBody);
+            apiActions.postRequest( // SAVES ADDED TV SHOW
+                "http://localhost:51880/api/Watchlist",
+                requestBody,
+                watchlists => {
+                    console.log(watchlists);
+                    mainDiv.innerHTML = WatchlistAddShow(watchlists);
+                }
+            )
+
         }
     })
 }
-
+/// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
     const mainDiv = document.querySelector(".main_div");
@@ -114,7 +123,7 @@ function navTvShows() {
             }
         )
     })
-
+/// GOES TO SPECIFIC TV SHOW FROM ALL TV SHOWS VIEW
     mainDiv.addEventListener('click', function(){
         if(event.target.classList.contains('tvShows__specific_tvShow')){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
