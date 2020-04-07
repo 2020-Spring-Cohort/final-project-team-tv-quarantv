@@ -4,7 +4,7 @@ export default function WatchlistMain(watchlists) {
    var ToBeWatched = [];
 return `
 ${watchlists.map(watchlist => {
-    if(watchlist.status == "Watched")
+    if(watchlist.status == "Watched" )
     Watched.push(watchlist.tvShow.title);
 
     if(watchlist.status == "Watching")
@@ -13,9 +13,18 @@ ${watchlists.map(watchlist => {
     if(watchlist.status == "ToBeWatched")
     ToBeWatched.push(watchlist.tvShow.title);
 
+})}.join("");
+
+<table border="10px><tr>
+${Watched.map(function (value){
+    return `
+    <td>${value}</td>
+    `
+}).join("")}
+</table>
 
 `
-})}.join("");
+
    
 }
 
