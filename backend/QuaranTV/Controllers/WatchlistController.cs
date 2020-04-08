@@ -39,7 +39,7 @@ namespace QuaranTV.Controllers
         public IEnumerable<Watchlist> Post([FromBody] Watchlist value)
         {
             watchlistRepo.Create(value);
-            return watchlistRepo.GetAll();
+            return watchlistRepo.GetByUserId(value.UserId);
         }
 
         // PUT: api/Watchlist/5

@@ -49,7 +49,9 @@ function home() {
         mainDiv.innerHTML = Home();
     })
 }
+
 /// GOES TO ALL USERS VIEW FROM NAV BAR
+
 function navUsers() {
     const usersNavButton = document.querySelector(".nav__users");
     const mainDiv = document.querySelector(".main_div");
@@ -57,12 +59,59 @@ function navUsers() {
     usersNavButton.addEventListener("click", function(){
          apiActions.getRequest("http://localhost:51880/api/User",
             users => {
-                console.log(users);
                 mainDiv.innerHTML = Users(users);
             }
         )
     })
+  
+/// GOES TO SPECIFIC USER FROM USERS VIEW
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains('users__specific_user')){
+            const userId = event.target.querySelector('.user__id').value;
+            
+            apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
+            user => {
+                mainDiv.innerHTML = Watchlist(user);
+            }
+        )}
+    })
+/// DISPLAYS ADD TV SHOW OPTION
+    mainDiv.addEventListener("click", function() {
+        const watchlistAddShowSection = mainDiv.querySelector(".watchlist__add_show");
+        if(event.target.classList.contains('watchlist__add_show_button')){
+            apiActions.getRequest("http://localhost:51880/api/TvShow",
+                tvShows => {
+                    watchlistAddShowSection.innerHTML = WatchlistAddShow(tvShows);
+                }
+            )
+        }
+    })
+/// ADDS TV SHOW TO WATCHLIST
+    mainDiv.addEventListener("click", function(){
+        if(event.target.classList.contains('watchlistaddshow__submit')){
+            const userId = document.querySelector('.user__id').value;
+            const tvShowId = event.target.parentElement.querySelector('.watchlistaddshow__show_id').value;
+            const status = event.target.parentElement.querySelector('.watchlistaddshow__status_choice').value;
+            
+            var requestBody = {
+                Status: status,
+                UserId: userId,
+                TvShowId: tvShowId
+            }
+            console.log(requestBody);
+            // SAVES ADDED TV SHOW
+            apiActions.postRequest(
+                "http://localhost:51880/api/Watchlist",
+                requestBody,
+                watchlist => {
+                    console.log(watchlist);
+                    mainDiv.innerHTML = WatchlistByUser(watchlist);
+                }
+            )
+        }
+    })
 }
+
 /// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
@@ -76,8 +125,10 @@ function navTvShows() {
             }
         )
     })
-/// TAKES YOU TO SPECIFIC TV SHOW VIEW
-    mainDiv.addEventListener('click', function(){
+
+/// GOES TO SPECIFIC TV SHOW FROM ALL TV SHOWS VIEW
+ 
+   mainDiv.addEventListener('click', function(){
         if(event.target.classList.contains('tvShows__specific_tvShow')){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
             console.log(tvShowId);
@@ -91,4 +142,3 @@ function navTvShows() {
         }
     })
 }
-
