@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
+import TvShowSelection from "./components/TvShowSelection";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -48,7 +49,7 @@ function home() {
         mainDiv.innerHTML = Home();
     })
 }
-
+/// GOES TO ALL USERS VIEW FROM NAV BAR
 function navUsers() {
     const usersNavButton = document.querySelector(".nav__users");
     const mainDiv = document.querySelector(".main_div");
@@ -62,7 +63,7 @@ function navUsers() {
         )
     })
 }
-
+/// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
     const mainDiv = document.querySelector(".main_div");
@@ -74,6 +75,20 @@ function navTvShows() {
                 mainDiv.innerHTML = TvShows(tvShows);
             }
         )
+    })
+/// TAKES YOU TO SPECIFIC TV SHOW VIEW
+    mainDiv.addEventListener('click', function(){
+        if(event.target.classList.contains('tvShows__specific_tvShow')){
+            const tvShowId = event.target.querySelector('.tvShow__id').value;
+            console.log(tvShowId);
+
+            apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
+            tvShow => {
+                console.log(tvShow);
+                mainDiv.innerHTML = TvShowSelection(tvShow);
+            }
+        )
+        }
     })
 }
 
