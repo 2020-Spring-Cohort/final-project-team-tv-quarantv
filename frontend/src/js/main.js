@@ -6,8 +6,6 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
-import Watchlist from "./components/Watchlist";
-import WatchlistAddShow from "./components/WatchlistAddShow";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -51,7 +49,9 @@ function home() {
         mainDiv.innerHTML = Home();
     })
 }
-//// GOES TO ALL USERS FROM NAV BAR
+
+/// GOES TO ALL USERS VIEW FROM NAV BAR
+
 function navUsers() {
     const usersNavButton = document.querySelector(".nav__users");
     const mainDiv = document.querySelector(".main_div");
@@ -63,6 +63,7 @@ function navUsers() {
             }
         )
     })
+  
 /// GOES TO SPECIFIC USER FROM USERS VIEW
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains('users__specific_user')){
@@ -110,6 +111,7 @@ function navUsers() {
         }
     })
 }
+
 /// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
@@ -123,8 +125,10 @@ function navTvShows() {
             }
         )
     })
+
 /// GOES TO SPECIFIC TV SHOW FROM ALL TV SHOWS VIEW
-    mainDiv.addEventListener('click', function(){
+ 
+   mainDiv.addEventListener('click', function(){
         if(event.target.classList.contains('tvShows__specific_tvShow')){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
             console.log(tvShowId);
@@ -138,4 +142,3 @@ function navTvShows() {
         }
     })
 }
-
