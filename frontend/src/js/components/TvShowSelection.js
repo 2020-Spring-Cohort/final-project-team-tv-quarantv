@@ -11,8 +11,10 @@ export default function TvShowSelection(tvShow) {
             ${tvShow.watchlists.map(value => {
                 return `
                 <div class="users__specific_user"
-                    <h4 class="user__name_btn">${value.review}</h4>
-                   
+                    <h4 class="user__name_btn">Name:   ${value.user.name}</h4>
+                    <h4 class="user__name_btn">Status:   ${value.status}</h4>
+                    <h4 class="user__name_btn">Rating:   ${value.rating}</h4>
+                    <h4 class="user__name_btn">Review:     ${value.review}</h4>
                 </div>
                `
         }).join("")}
