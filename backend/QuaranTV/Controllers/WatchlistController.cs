@@ -34,6 +34,13 @@ namespace QuaranTV.Controllers
             return watchlistRepo.GetById(id);
         }
 
+        // GET: api/Watchlist/User/5
+        [HttpGet("User/{userId}")]
+        public IEnumerable<Watchlist> GetWatchlistByUser(int userId)
+        {
+            return watchlistRepo.GetByUserId(userId);
+        }
+
         // POST: api/Watchlist
         [HttpPost]
         public IEnumerable<Watchlist> Post([FromBody] Watchlist value)
