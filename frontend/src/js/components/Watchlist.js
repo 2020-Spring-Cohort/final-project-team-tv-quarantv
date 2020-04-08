@@ -5,7 +5,7 @@ export default function Watchlist(user){
         <input class="user__id" type="hidden" value="${user.id}">
     </div>
 
-    <section class="watchlist__main">
+    <section class="watchlist__main_section">
         <button class="watchlist__show_watchlist_btn">Click to show watchlist</button>
     </section>
 

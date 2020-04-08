@@ -75,6 +75,20 @@ function navUsers() {
             }
         )}
     })
+
+/// Get watchlist by a user's ID
+    mainDiv.addEventListener("click", function(){
+        if(event.target.classList.contains("watchlist__show_watchlist_btn")){
+            const userId = document.querySelector('.user__id').value;
+            const watchlistMainSection = document.querySelector(".watchlist__main_section");
+            apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                userWatchlist => {
+                    watchlistMainSection.innerHTML = WatchlistByUser(userWatchlist);
+                }
+            )
+        }
+    })
+
 /// DISPLAYS ADD TV SHOW OPTION
     mainDiv.addEventListener("click", function() {
         const watchlistAddShowSection = mainDiv.querySelector(".watchlist__add_show");
@@ -108,6 +122,7 @@ function navUsers() {
                     mainDiv.innerHTML = WatchlistByUser(watchlist);
                 }
             )
+            
         }
     })
 }
