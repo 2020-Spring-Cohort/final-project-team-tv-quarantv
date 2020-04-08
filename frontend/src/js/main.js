@@ -6,6 +6,10 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
+import Watchlist from "./components/Watchlist";
+import WatchlistAddShow from "./components/WatchlistAddShow";
+import WatchlistByUser from "./components/WatchlistByUser";
+import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSection";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -104,6 +108,8 @@ function navUsers() {
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('watchlistaddshow__submit')){
             const userId = document.querySelector('.user__id').value;
+            const watchlistMainSection = document.querySelector(".watchlist__main_section");
+            const watchlistAddShowButtonSection = document.querySelector(".watchlist__add_show");
             const tvShowId = event.target.parentElement.querySelector('.watchlistaddshow__show_id').value;
             const status = event.target.parentElement.querySelector('.watchlistaddshow__status_choice').value;
             
@@ -112,17 +118,17 @@ function navUsers() {
                 UserId: userId,
                 TvShowId: tvShowId
             }
-            console.log(requestBody);
-            // SAVES ADDED TV SHOW
             apiActions.postRequest(
                 "http://localhost:51880/api/Watchlist",
                 requestBody,
-                watchlist => {
-                    console.log(watchlist);
-                    mainDiv.innerHTML = WatchlistByUser(watchlist);
-                }
+                a => {
+                    apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                    usersWatchlist => {
+                        watchlistMainSection.innerHTML = WatchlistByUser(usersWatchlist);
+                    }
+                )}
             )
-            
+            watchlistAddShowButtonSection.innerHTML = WatchlistAddShowButtonSection();
         }
     })
 }
