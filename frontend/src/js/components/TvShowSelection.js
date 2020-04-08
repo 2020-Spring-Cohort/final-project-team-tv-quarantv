@@ -6,6 +6,22 @@ export default function TvShowSelection(tvShow) {
             <h4>Number of seasons: ${tvShow.season}</h4>
             <h4>Rated: ${tvShow.viewerDiscretion}</h4>
             <input class="tvShow__id" type="hidden" value="${tvShow.id}">
+
+            
+            ${tvShow.watchlists.map(value => {
+                return `
+                <div class="users__specific_user"
+                    <h4 class="user__name_btn">${value.review}</h4>
+                   
+                </div>
+               `
+        }).join("")}
+
+
+
+
+
+
         </div>
     `
 }
