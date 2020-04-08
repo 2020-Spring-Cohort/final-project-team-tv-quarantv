@@ -4,9 +4,15 @@ export default function Watchlist(user){
         <h2>${user.name}'s Watchlist</h2>
         <input class="user__id" type="hidden" value="${user.id}">
     </div>
-
+    
     <section class="watchlist__main_section">
-        <button class="watchlist__show_watchlist_btn">Click to show watchlist</button>
+        <div class="watchlistbyuser__container">
+            ${user.watchlists.map(element => {
+                return `
+                 <p>${element.tvShow.title}</p>
+                `
+            }).join("")}
+        </div>
     </section>
 
     <section class="watchlist__add_show">

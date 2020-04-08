@@ -80,7 +80,7 @@ function navUsers() {
         )}
     })
 
-/// Get watchlist by a user's ID
+/* /// Get watchlist by a user's ID
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains("watchlist__show_watchlist_btn")){
             const userId = document.querySelector('.user__id').value;
@@ -91,7 +91,7 @@ function navUsers() {
                 }
             )
         }
-    })
+    }) */
 
 /// DISPLAYS ADD TV SHOW OPTION
     mainDiv.addEventListener("click", function() {
