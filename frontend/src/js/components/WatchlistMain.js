@@ -5,11 +5,6 @@ export default function WatchlistMain(watchlists) {
 return `
 ${watchlists.map(watchlist => {
 
-
-
-
-
-    
     if(watchlist.status == "Watched" )
     Watched.push(watchlist.tvShow.title);
 

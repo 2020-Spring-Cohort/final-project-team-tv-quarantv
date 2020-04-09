@@ -124,7 +124,7 @@ function navUsers() {
                 a => {
                     apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
                     usersWatchlist => {
-                        watchlistMainSection.innerHTML = WatchlistByUser(usersWatchlist);
+                        Watchlist(usersWatchlist);
                     }
                 )}
             )
