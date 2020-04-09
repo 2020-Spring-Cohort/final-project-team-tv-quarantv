@@ -34,6 +34,13 @@ namespace QuaranTV.Controllers
             return commentRepo.GetById(id);
         }
 
+        // GET: api/Comment/TvShow/5
+        [HttpGet("TvShow/{tvShowId}")]
+        public IEnumerable<Comment> GetCommentsByTvShow(int tvShowId)
+        {
+            return commentRepo.GetByTvShowId(tvShowId);
+        }
+
         // POST: api/Comment
         [HttpPost]
         public IEnumerable<Comment> Post([FromBody] Comment value)

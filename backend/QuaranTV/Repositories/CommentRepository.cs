@@ -13,9 +13,9 @@ namespace QuaranTV.Repositories
         {
             db = context;
         }
-        public IEnumerable<Comment> GetByUserId(int id)
+        public override IEnumerable<Comment> GetByTvShowId(int id)
         {
-            return db.Comments.Where(w => w.Id == id).ToList();
+            return db.Comments.Where(w => w.TvShowId == id).ToList();
         }
     }
 }
