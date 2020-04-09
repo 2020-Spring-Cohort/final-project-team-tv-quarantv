@@ -6,10 +6,11 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
-import Watchlist from "./components/Watchlist";
+import WatchlistGrid from "./components/WatchlistGrid";
 import WatchlistAddShow from "./components/WatchlistAddShow";
-import WatchlistByUser from "./components/WatchlistByUser";
+import WatchlistFilter from "./components/WatchlistFilter";
 import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSection";
+import WatchlistUserInfo from "./components/WatchlistUserInfo";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -72,10 +73,17 @@ function navUsers() {
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains('users__specific_user')){
             const userId = event.target.querySelector('.user__id').value;
-            
+            const test = document.createElement('div');
+            test.innerHTML = WatchlistGrid();
             apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
             user => {
-                mainDiv.innerHTML = Watchlist(user);
+                mainDiv.innerHTML = WatchlistUserInfo(user);
+                mainDiv.appendChild(test);
+                apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                usersWatchlist => {
+                    WatchlistFilter(usersWatchlist);
+                }
+                )
             }
         )}
     })
@@ -118,6 +126,7 @@ function navUsers() {
                 UserId: userId,
                 TvShowId: tvShowId
             }
+            console.log(requestBody);
             apiActions.postRequest(
                 "http://localhost:51880/api/Watchlist",
                 requestBody,
