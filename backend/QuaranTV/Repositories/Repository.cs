@@ -58,5 +58,10 @@ namespace QuaranTV.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public virtual IEnumerable<T> GetByTvShowId(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace QuaranTV.Repositories
     {
         IEnumerable<T> GetAll();
         IEnumerable<T> GetByUserId(int id);
+        IEnumerable<T> GetByTvShowId(int id);
         T GetById(int id);
         void Create(T obj);
         void Update(T obj);
