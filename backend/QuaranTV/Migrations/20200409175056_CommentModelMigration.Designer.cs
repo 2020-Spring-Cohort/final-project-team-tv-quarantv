@@ -9,7 +9,7 @@ using QuaranTV;
 namespace QuaranTV.Migrations
 {
     [DbContext(typeof(QuaranTvContext))]
-    [Migration("20200409160138_CommentModelMigration")]
+    [Migration("20200409175056_CommentModelMigration")]
     partial class CommentModelMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
