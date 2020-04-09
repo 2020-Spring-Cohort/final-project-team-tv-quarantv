@@ -6,6 +6,11 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
+import WatchlistGrid from "./components/WatchlistGrid";
+import WatchlistAddShow from "./components/WatchlistAddShow";
+import WatchlistFilter from "./components/WatchlistFilter";
+import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSection";
+import WatchlistUserInfo from "./components/WatchlistUserInfo";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -68,13 +73,22 @@ function navUsers() {
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains('users__specific_user')){
             const userId = event.target.querySelector('.user__id').value;
-            
+            const watchlistGrid = document.createElement('div');
+            watchlistGrid.classList.add('watchlist__upper_grid_container');
+            watchlistGrid.innerHTML = WatchlistGrid();
             apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
             user => {
-                mainDiv.innerHTML = Watchlist(user);
+                mainDiv.innerHTML = WatchlistUserInfo(user);
+                mainDiv.appendChild(watchlistGrid);
+                apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                usersWatchlist => {
+                    WatchlistFilter(usersWatchlist);
+                }
+                )
             }
         )}
     })
+
 /// DISPLAYS ADD TV SHOW OPTION
     mainDiv.addEventListener("click", function() {
         const watchlistAddShowSection = mainDiv.querySelector(".watchlist__add_show");
@@ -90,6 +104,7 @@ function navUsers() {
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('watchlistaddshow__submit')){
             const userId = document.querySelector('.user__id').value;
+            const watchlistAddShowButtonSection = document.querySelector(".watchlist__add_show");
             const tvShowId = event.target.parentElement.querySelector('.watchlistaddshow__show_id').value;
             const status = event.target.parentElement.querySelector('.watchlistaddshow__status_choice').value;
             
@@ -98,16 +113,26 @@ function navUsers() {
                 UserId: userId,
                 TvShowId: tvShowId
             }
-            console.log(requestBody);
-            // SAVES ADDED TV SHOW
             apiActions.postRequest(
                 "http://localhost:51880/api/Watchlist",
                 requestBody,
-                watchlist => {
-                    console.log(watchlist);
-                    mainDiv.innerHTML = WatchlistByUser(watchlist);
-                }
+                a => {
+                    const watchlistGrid = document.createElement('div');
+                    watchlistGrid.classList.add('watchlist__upper_grid_container');
+                    watchlistGrid.innerHTML = WatchlistGrid();
+                    apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
+                    user => {
+                        mainDiv.innerHTML = WatchlistUserInfo(user);
+                        mainDiv.appendChild(watchlistGrid);
+                        apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                        usersWatchlist => {
+                            WatchlistFilter(usersWatchlist);
+                        }
+                        )
+                    }
+                )}
             )
+            watchlistAddShowButtonSection.innerHTML = WatchlistAddShowButtonSection();
         }
     })
 }
