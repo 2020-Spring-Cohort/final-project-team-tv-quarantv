@@ -18,6 +18,7 @@ namespace QuaranTV.Models
 
         [JsonIgnore]
         public virtual IList<Watchlist> Watchlists { get; set; }
+        public virtual IList<Comment> Comments { get; set; }
 
 
 

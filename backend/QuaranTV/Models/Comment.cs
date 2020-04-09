@@ -11,9 +11,15 @@ namespace QuaranTV.Models
         public int Id { get; set; }
         public string CommentText { get; set; }
 
+
         [JsonIgnore]
         public virtual User User { get; set; }
         public int UserId { get; set; }
+
+        [JsonIgnore]
+        public virtual TvShow TvShow { get; set; }
+        public int TvShowId { get; set; }
+
 
         public Comment()
         {
