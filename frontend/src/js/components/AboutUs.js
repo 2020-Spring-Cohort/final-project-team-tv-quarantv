@@ -11,9 +11,9 @@ export default function AboutUs() {
     <div><a href="https://www.linkedin.com/in/eric-drexler/" target="_blank"><img src="./img/users/eric.jpg" class="users__user_image"></a>
     <p>Erin Jodlowsky</p></div>
     </div>
-    <div><a href="https://www.linkedin.com/in/eric-drexler/" target="_blank"><img src="./img/users/eric.jpg" class="users__user_image"></a>
+    <div><a href="https://www.linkedin.com/in/erinjodlowsky/" target="_blank"><img src="./img/users/erin.jpg" class="users__user_image"></a>
     <p>Eric Drexler</p></div>
-    <div><a href="https://www.linkedin.com/in/eric-drexler/" target="_blank"><img src="./img/users/eric.jpg" class="users__user_image"></a>
+    <div><a href="https://www.linkedin.com/in/nabil-meskaouni-b63818181/" target="_blank"><img src="./img/users/nabil.jpg" class="users__user_image"></a>
     <p>Nabil</p></div>
     </div>
     </div>
