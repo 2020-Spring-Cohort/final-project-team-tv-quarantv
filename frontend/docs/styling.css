@@ -2,6 +2,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+.main_div {
+    background: rgba(8, 40, 109, .9); /*----placeholding background---- */
+    padding: 20px;
+}
+/* -----ABOUT US----- */
+.p__about-us {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.768);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+}
 .users_imgs {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +25,12 @@
     position: relative;
     width: 50%;
     max-width: 100px;
+    border: 1.5px solid rgba(0, 0, 0, 0.707);
+    box-shadow: -3px 3px 0 0px rgba(0, 0, 0, 0.707);
+    outline: none;
+}
+.flexImg:hover {
+    border: 1.5px solid rgba(255, 255, 255, 0.768);
 }
 .user_img {
     display: block;
@@ -31,13 +48,17 @@
     opacity:0;
     color: white;
     font-size: 18px;
-    padding: 2.5px;
+    padding: 4px;
     text-align: center;
   }
 .flexImg:hover .img-hover-block {
     opacity: 1;
 }
-
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
 .tvShow__image {
     max-height: 150px;
 }
