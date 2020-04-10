@@ -11,6 +11,7 @@ import WatchlistAddShow from "./components/WatchlistAddShow";
 import WatchlistFilter from "./components/WatchlistFilter";
 import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSection";
 import WatchlistUserInfo from "./components/WatchlistUserInfo";
+import Comments from "./components/comments";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
