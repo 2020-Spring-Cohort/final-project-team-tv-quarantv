@@ -11,7 +11,7 @@ import WatchlistAddShow from "./components/WatchlistAddShow";
 import WatchlistFilter from "./components/WatchlistFilter";
 import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSection";
 import WatchlistUserInfo from "./components/WatchlistUserInfo";
-import Comments from "./components/comment";
+import CommentsByTvShow from "./components/CommentsByTvShow";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 
@@ -154,23 +154,24 @@ function navTvShows() {
 
 /// GOES TO SPECIFIC TV SHOW FROM ALL TV SHOWS VIEW
  
-   mainDiv.addEventListener('click', function(){
-        if(event.target.classList.contains('tvShows__specific_tvShow')){
+   mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("tvShows__specific_tvShow")){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
-            console.log(tvShowId);
-
             apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
             tvShow => {
-                console.log(tvShow);
                 mainDiv.innerHTML = TvShowSelection(tvShow);
             }
         )
         }
     })
-
     /// Add event listener to Click comments button and load all comments
     // Also loads add more comments at the bottom of the comments
-
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("view-comment__submit")){
+            const tvShowId = document.querySelector(".tvShow__id").value;
+            console.log(tvShowId);
+        }
+    })
 
 
 }
