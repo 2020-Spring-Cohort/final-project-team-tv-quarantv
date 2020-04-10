@@ -1,18 +1,64 @@
-#allpics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 1.25em;
-    grid-row-gap: 2.5em;
-    width: 30%;
-    border-radius: 48%;
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgba(106, 77, 81, 0.9); /*----placeholding background---- */
+    padding: 20px;
+}
+/* -----ABOUT US----- */
+.p__about-us {
     text-align: center;
+    color: rgba(255, 255, 255, 0.768);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
 }
-
-.users__user_image {
-    width: 100px;
+.users_imgs {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 2rem auto;
+    justify-content: space-evenly;
 }
-
+.flexImg {
+    justify-content: flex-start;
+    position: relative;
+    width: 50%;
+    max-width: 100px;
+    border: 1.5px solid rgba(0, 0, 0, 0.707);
+    box-shadow: -3px 3px 0 0px rgba(0, 0, 0, 0.707);
+    outline: none;
+}
+.flexImg:hover {
+    border: 2.5px solid rgba(0, 0, 0, 0.707);
+}
+.user_img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.img-hover-block {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(8, 40, 109, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 18px;
+    padding: 4px;
+    text-align: center;
+  }
+.flexImg:hover .img-hover-block {
+    opacity: 1;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
 .tvShow__image {
     max-height: 150px;
 }
