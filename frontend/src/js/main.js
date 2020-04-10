@@ -6,11 +6,13 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
+import TvShowSelectionShowReviewButton from "./components/TvShowSelectionShowReviewButton";
 import WatchlistGrid from "./components/WatchlistGrid";
 import WatchlistAddShow from "./components/WatchlistAddShow";
 import WatchlistFilter from "./components/WatchlistFilter";
 import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSection";
 import WatchlistUserInfo from "./components/WatchlistUserInfo";
+import CommentsByTvShow from "./components/CommentsByTvShow";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 import EditWatchlist from "./components/EditWatchlist";
@@ -295,11 +297,9 @@ function navUsers() {
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
     const mainDiv = document.querySelector(".main_div");
-
     tvShowsNavButton.addEventListener("click", function(){
          apiActions.getRequest("http://localhost:51880/api/TvShow",
             tvShows => {
-                console.log(tvShows);
                 mainDiv.innerHTML = TvShows(tvShows);
             }
         )
@@ -307,17 +307,64 @@ function navTvShows() {
 
 /// GOES TO SPECIFIC TV SHOW FROM ALL TV SHOWS VIEW
  
-   mainDiv.addEventListener('click', function(){
-        if(event.target.classList.contains('tvShows__specific_tvShow')){
+   mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("tvShows__specific_tvShow")){
             const tvShowId = event.target.querySelector('.tvShow__id').value;
-            console.log(tvShowId);
-
             apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
             tvShow => {
-                console.log(tvShow);
                 mainDiv.innerHTML = TvShowSelection(tvShow);
             }
         )
+        }
+    })
+    /// Add event listener to Click comments button and load all comments
+    // Also loads add more comments at the bottom of the comments
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("view-comment__submit")){
+            const tvShowId = document.querySelector(".tvShow__id").value;
+            const commentTextArea = document.querySelector(".tvShowSelection__text_area");
+            const tvShowButtonSection = document.querySelector(".tvShowSelection__button_section");
+            apiActions.getRequest(`http://localhost:51880/api/Comment/TvShow/${tvShowId}`,
+                comments =>{
+                    commentTextArea.innerHTML = CommentsByTvShow(comments);
+                }
+            )
+            tvShowButtonSection.innerHTML = TvShowSelectionShowReviewButton();
+        }
+    })
+    //returns to the main tvShow view after clicking review button
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("tvShowSelection__reload_reviews")){
+            const tvShowId = document.querySelector('.tvShow__id').value;
+            apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
+            tvShow => {
+                mainDiv.innerHTML = TvShowSelection(tvShow);
+            }
+        )
+        }
+    })
+    //POST request to add comment to a specific show
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("add-comment__submit")){
+            const tvShowId = document.querySelector(".tvShow__id").value;
+            const userId = "6";
+            const commentText = document.querySelector(".add-commentText").value;
+            const commentTextArea = document.querySelector(".tvShowSelection__text_area");
+            var requestBody = {
+                UserId: userId,
+                TvShowId: tvShowId,
+                CommentText: commentText
+            }
+            console.log(requestBody);
+            apiActions.postRequest(`http://localhost:51880/api/Comment/`,
+                requestBody,
+                a => {
+                    apiActions.getRequest(`http://localhost:51880/api/Comment/TvShow/${tvShowId}`,
+                    comments => {
+                    commentTextArea.innerHTML = CommentsByTvShow(comments);
+                })
+                }
+            )
         }
     })
 }
