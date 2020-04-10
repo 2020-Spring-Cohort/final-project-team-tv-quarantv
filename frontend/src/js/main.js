@@ -189,4 +189,25 @@ function navTvShows() {
         )
         }
     })
+    //POST request to add comment to a specific show
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("add-comment__submit")){
+            const tvShowId = document.querySelector(".tvShow__id").value;
+            const userId = "2";
+            const commentText = document.querySelector(".add-commentText").value;
+            const commentTextArea = document.querySelector(".tvShowSelection__text_area");
+            var requestBody = {
+                UserId: userId,
+                TvShowId: tvShowId,
+                CommentText: commentText
+            }
+            console.log(requestBody);
+            apiActions.postRequest(`http://localhost:51880/api/Comment/`,
+                requestBody,
+                comments => {
+                    commentTextArea.innerHTML = CommentsByTvShow(comments);
+                }
+            )
+        }
+    })
 }

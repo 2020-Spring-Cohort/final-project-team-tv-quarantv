@@ -6,7 +6,8 @@ export default function CommentsByTvShow(comments){
                 return `
                 <ul class="comments">
                 <li>
-                <p>${comments.CommentText}</p>
+                <p>${comments.user.name} writes:<p>
+                <p>${comments.commentText}</p>
                 </li>
                 </ul>
                `
@@ -14,12 +15,12 @@ export default function CommentsByTvShow(comments){
         </div>
 
         <!--- Add Comments here --->
-        <section class="add-comment">    
-        <label>Post a Comment</label>
-        </br>
-        <input class="add-commentText" type="text" placeholder="Add a Comment">
-        </br>
-        <button class="add-comment__submit">Add a Comment</button>       
+        <section class="add-comment">
+            <label>Post a Comment</label>
+            </br>
+            <textarea class="add-commentText" type="text" rows="5" cols="33" placeholder="Add a Comment"></textarea>
+            </br>
+            <button class="add-comment__submit">Add a Comment</button>       
         </section>
     `
 }

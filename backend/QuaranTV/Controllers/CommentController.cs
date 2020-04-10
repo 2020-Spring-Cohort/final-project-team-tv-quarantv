@@ -46,7 +46,7 @@ namespace QuaranTV.Controllers
         public IEnumerable<Comment> Post([FromBody] Comment value)
         {
             commentRepo.Create(value);
-            return commentRepo.GetByUserId(value.UserId);
+            return commentRepo.GetByTvShowId(value.TvShowId);
         }
 
         // PUT: api/Comment/5
