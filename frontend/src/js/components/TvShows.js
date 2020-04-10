@@ -11,12 +11,5 @@ export default function TvShows(tvShows){
                `
         }).join("")}
         </div>
-
-        <section class="add-comment">    
-        <input class="add-commentText" type="text" placeholder="Add a Comment">
-        <button class="add-comment__submit">Add a Comment</button>       
-        </section>
-
-
     `
 }
