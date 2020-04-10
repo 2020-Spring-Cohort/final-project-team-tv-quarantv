@@ -264,7 +264,25 @@ mainDiv.addEventListener("click", function(){
           )
        }
     })
+//////////////////////////////////////////delete//////////////////////
 
+mainDiv.addEventListener("click", function(){
+    if(event.target.classList.contains('deleteReview-watchList__submit')){
+
+        alert("helloooo");
+        const WatchId = event.target.parentElement.querySelector('.watch__id').value;
+        console.log(WatchId);
+
+        apiActions.deleteRequest(
+            `http://localhost:51880/api/Watchlist/${WatchId}`,
+            WatchListEdit => {
+                console.log(WatchListEdit);
+                mainDiv.innerHTML = EditWatchlist(WatchListEdit);
+              }
+        )
+
+    }
+})
 
 
 }
