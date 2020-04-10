@@ -167,4 +167,10 @@ function navTvShows() {
         )
         }
     })
+
+    /// Add event listener to Click comments button and load all comments
+    // Also loads add more comments at the bottom of the comments
+
+
+
 }

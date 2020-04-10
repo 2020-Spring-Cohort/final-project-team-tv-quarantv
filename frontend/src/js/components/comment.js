@@ -11,5 +11,14 @@ export default function Comments(comments){
                `
         }).join("")}
         </div>
+
+        <!--- Add Comments here --->
+        <section class="add-comment">    
+        <label>Post a Comment</label>
+        </br>
+        <input class="add-commentText" type="text" placeholder="Add a Comment">
+        </br>
+        <button class="add-comment__submit">Add a Comment</button>       
+        </section>
     `
 }
