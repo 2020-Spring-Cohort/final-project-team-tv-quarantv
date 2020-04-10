@@ -30,7 +30,7 @@
     outline: none;
 }
 .flexImg:hover {
-    border: 1.5px solid rgba(255, 255, 255, 0.768);
+    border: 2.5px solid rgba(0, 0, 0, 0.707);
 }
 .user_img {
     display: block;
