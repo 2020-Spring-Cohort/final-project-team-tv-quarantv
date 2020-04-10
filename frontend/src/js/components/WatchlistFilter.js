@@ -7,8 +7,8 @@ export default function WatchlistFilter(watchlist){
             watchedShow.innerText = element.tvShow.title;
             document.querySelector(".watchlist__watched_shows").appendChild(watchedShow);
             watchedShow.innerHTML +=  `<input class="watch__id"  type="hidden" value="${element.id}">` +
-            " <button class='edit-watchList__submit'>Edit this Show </button>" 
-          + " <button class='add-watchList-review__submit'>Add Review </button>" ;
+            ` <button class='edit-watchList__submit'>Edit this Show </button>` 
+          + ` <button class='add-watchList-review__submit'>Add Review </button>` ;
          
         }
         else if(element.status == "Watching"){
@@ -18,7 +18,7 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__watching_shows").appendChild(watchingShow);
             watchingShow.innerHTML +=  `<input class="watch__id"  type="hidden" value="${element.id}">` +
             " <button class='edit-watchList__submit'>Edit this Show </button>" 
-          + " <button class='add-watchList-review__submit'>Add Review </button>" ;
+          ;
         }
         else if(element.status == "ToBeWatched"){
             const toBeWatchedShow = document.createElement("p");
@@ -27,7 +27,7 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__tobewatched_shows").appendChild(toBeWatchedShow);
             toBeWatchedShow.innerHTML +=  `<input class="watch__id"  type="hidden" value="${element.id}">` +
             " <button class='edit-watchList__submit'>Edit this Show </button>" 
-          + " <button class='add-watchList-review__submit'>Add Review </button>" ;
+           ;
         }
     }).join("")}
     `
