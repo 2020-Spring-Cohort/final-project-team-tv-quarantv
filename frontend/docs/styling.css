@@ -2,29 +2,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.users_img_container {
+.users_imgs {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
+    margin: 2rem auto;
+    justify-content: space-evenly;
 }
-
-.container_user-img {
+.flexImg {
+    justify-content: flex-start;
     position: relative;
     width: 50%;
-    max-width: 200px;
+    max-width: 100px;
 }
-
-.users__user_image {
-    /* display: flex;
-    width: 90%;
-    margin: 10px; */
+.user_img {
     display: block;
     width: 100%;
     height: auto;
 }
-
 .img-hover-block {
     position: absolute;
     bottom: 0;
@@ -35,13 +30,12 @@
     transition: .5s ease;
     opacity:0;
     color: white;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 18px;
+    padding: 2.5px;
     text-align: center;
   }
-
-.container_user-img:hover .img-hover-block {
-  opacity: 1;
+.flexImg:hover .img-hover-block {
+    opacity: 1;
 }
 
 .tvShow__image {
