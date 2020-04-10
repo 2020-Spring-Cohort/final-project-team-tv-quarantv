@@ -19,11 +19,19 @@ export default function TvShowSelection(tvShow) {
                `
         }).join("")}
 
-
-
-
-
-
         </div>
+
+        <section class="comments"> 
+        <button class="view-comment__submit">View Comments (Contains Spoilers!)</button>    
+        </section> 
+        </br>
+        <!--- Add Comments here --->
+        <section class="add-comment">    
+        <label>Post a Comment about ${tvShow.title}</label>
+        <br/>
+        <input class="add-commentText" type="text" placeholder="Add a Comment">
+        </br>>
+        <button class="add-comment__submit">Add a Comment</button>       
+        </section>
     `
 }
