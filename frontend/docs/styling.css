@@ -2,8 +2,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.main_div {
-    background: rgba(8, 40, 109, .9); /*----placeholding background---- */
+body {
+    background: rgba(114, 134, 177, 0.9); /*----placeholding background---- */
     padding: 20px;
 }
 /* -----ABOUT US----- */
