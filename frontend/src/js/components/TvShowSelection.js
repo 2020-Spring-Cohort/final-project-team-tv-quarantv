@@ -28,9 +28,9 @@ export default function TvShowSelection(tvShow) {
         <!--- Add Comments here --->
         <section class="add-comment">    
         <label>Post a Comment about ${tvShow.title}</label>
-        <br/>
+        </br>
         <input class="add-commentText" type="text" placeholder="Add a Comment">
-        </br>>
+        </br>
         <button class="add-comment__submit">Add a Comment</button>       
         </section>
     `
