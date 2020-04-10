@@ -13,6 +13,7 @@ import WatchlistAddShowButtonSection from "./components/WatchlistAddShowButtonSe
 import WatchlistUserInfo from "./components/WatchlistUserInfo";
 import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
+import EditWatchlist from "./components/EditWatchlist";
 
 
 export default pageBuild
@@ -135,6 +136,74 @@ function navUsers() {
             watchlistAddShowButtonSection.innerHTML = WatchlistAddShowButtonSection();
         }
     })
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////*************////////////////////////////
+
+mainDiv.addEventListener("click", function(){
+    if(event.target.classList.contains('edit-watchList__submit')){
+        const WatchId = event.target.parentElement.querySelector('.watch__id').value;
+        console.log(WatchId);
+
+        apiActions.getRequest(
+            `http://localhost:51880/api/Watchlist/${WatchId}`,
+            WatchListEdit => {
+                console.log(WatchListEdit);
+                mainDiv.innerHTML = EditWatchlist( WatchListEdit);
+              }
+        )
+
+    }
+})
+
+
+ mainDiv.addEventListener("click", function(){
+ if(event.target.classList.contains('update-watchList__submit')){
+     const watchId = event.target.parentElement.querySelector('.watch__id').value;
+     const userId = event.target.parentElement.querySelector('.user__id').value;
+     const tvshowId = event.target.parentElement.querySelector('.tv__id').value;
+     const review = event.target.parentElement.querySelector('.update-review').value;
+     const rating = event.target.parentElement.querySelector('.update-rating').value;
+     const status = event.target.parentElement.querySelector('.update-status').value;
+        
+     const WatchData = {
+           Id: watchId,
+           UserId: userId,
+           TvShowId: tvshowId,
+           Review: review,
+           Rating: rating,
+           Status: status
+         };
+
+         console.log(WatchData);
+
+      apiActions.putRequest(
+        `http://localhost:51880/api/Watchlist/${watchId}`,
+        WatchData,
+        a => {
+            const watchlistGrid = document.createElement('div');
+            watchlistGrid.classList.add('watchlist__upper_grid_container');
+            watchlistGrid.innerHTML = WatchlistGrid();
+            apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
+            user => {
+                mainDiv.innerHTML = WatchlistUserInfo(user);
+                mainDiv.appendChild(watchlistGrid);
+                apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                usersWatchlist => {
+                    WatchlistFilter(usersWatchlist);
+                }
+                )
+            }
+        )}
+
+
+       )
+    }
+ })
+
+
+////////////////////////////////*************////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
 }
 
 /// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
