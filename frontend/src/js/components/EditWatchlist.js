@@ -3,7 +3,6 @@ export default function EditWatchlist(watch){
   
     return `
      <section class="update-Watched">
-     <h3><b>Edit Album</b></h3><br>
      <label>Tv Show Title</label><br>
      <h4>${watch.tvShow.title}</h4><br> 
  
@@ -32,7 +31,6 @@ export default function EditWatchlist(watch){
   
  return `
  <section class="update-Watched">
- <h3><b>Edit Album</b></h3><br>
  <label>Tv Show Title</label><br>
  <h4>${watch.tvShow.title}</h4><br>  
  
@@ -62,7 +60,6 @@ export default function EditWatchlist(watch){
   
  return `
  <section class="update-Watched">
- <h3><b>Edit Album</b></h3><br>
  <label>Tv Show Title</label><br>
  <h4>${watch.tvShow.title}</h4><br>  
  
