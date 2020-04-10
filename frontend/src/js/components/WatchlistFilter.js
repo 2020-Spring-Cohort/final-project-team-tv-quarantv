@@ -8,7 +8,7 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__watched_shows").appendChild(watchedShow);
             watchedShow.innerHTML +=  `<input class="watch__id"  type="hidden" value="${element.id}">` +
             ` <button class='edit-watchList__submit'>Edit this Show </button>` 
-          + ` <button class='add-watchList-review__submit'>Add Review </button>` ;
+          + ` <button class='addReview-watchList__submit'>Add Review </button>` ;
          
         }
         else if(element.status == "Watching"){
