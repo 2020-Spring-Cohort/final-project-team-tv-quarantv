@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Users from "./components/Users";
 import TvShows from "./components/TvShows";
 import TvShowSelection from "./components/TvShowSelection";
+import TvShowSelectionShowReviewButton from "./components/TvShowSelectionShowReviewButton";
 import WatchlistGrid from "./components/WatchlistGrid";
 import WatchlistAddShow from "./components/WatchlistAddShow";
 import WatchlistFilter from "./components/WatchlistFilter";
@@ -142,11 +143,9 @@ function navUsers() {
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
     const mainDiv = document.querySelector(".main_div");
-
     tvShowsNavButton.addEventListener("click", function(){
          apiActions.getRequest("http://localhost:51880/api/TvShow",
             tvShows => {
-                console.log(tvShows);
                 mainDiv.innerHTML = TvShows(tvShows);
             }
         )
@@ -169,9 +168,25 @@ function navTvShows() {
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("view-comment__submit")){
             const tvShowId = document.querySelector(".tvShow__id").value;
-            console.log(tvShowId);
+            const commentTextArea = document.querySelector(".tvShowSelection__text_area");
+            const tvShowButtonSection = document.querySelector(".tvShowSelection__button_section");
+            apiActions.getRequest(`http://localhost:51880/api/Comment/TvShow/${tvShowId}`,
+                comments =>{
+                    commentTextArea.innerHTML = CommentsByTvShow(comments);
+                }
+            )
+            tvShowButtonSection.innerHTML = TvShowSelectionShowReviewButton();
         }
     })
-
-
+    //returns to the main tvShow view after clicking review button
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("tvShowSelection__reload_reviews")){
+            const tvShowId = document.querySelector('.tvShow__id').value;
+            apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
+            tvShow => {
+                mainDiv.innerHTML = TvShowSelection(tvShow);
+            }
+        )
+        }
+    })
 }

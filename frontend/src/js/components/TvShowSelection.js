@@ -8,7 +8,7 @@ export default function TvShowSelection(tvShow) {
                 <h4>Rated: ${tvShow.viewerDiscretion}</h4>
                 <input class="tvShow__id" type="hidden" value="${tvShow.id}">
             </div>
-            <div class="tvShowSelection__text_section">
+            <div class="tvShowSelection__text_area">
                 ${tvShow.watchlists.map(value => {
                     return `
                     <div class="users__specific_user"
@@ -22,11 +22,11 @@ export default function TvShowSelection(tvShow) {
             </div>
 
         </div>
-
-        <section class="tvShowSelection__comments"> 
+        </br>
+        </br>
+        <section class="tvShowSelection__button_section"> 
             <button class="view-comment__submit">View Comments (Contains Spoilers!)</button>    
         </section> 
-        </br>
        
     `
 }
