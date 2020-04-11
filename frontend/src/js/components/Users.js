@@ -6,7 +6,7 @@ export default function Users(users){
                 return `
                 <div class="users__specific_user"
                     <h4 class="user__name_btn">${user.name}</h4>
-                    <img class="users__user_image" src="./img/users/${user.image}" alt="${user.image}"></img>
+                    <img class="users__user_image" src="./img/users/${user.image}" alt="Image"></img>
                     <input class="user__id" type="hidden" value="${user.id}">
                 </div>
                `

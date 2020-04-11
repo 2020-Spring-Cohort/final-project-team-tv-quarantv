@@ -6,6 +6,7 @@ export default function TvShows(tvShows){
                 return `
                 <div class="tvShows__specific_tvShow"
                     <h4 class="tvShows__show_title">${tvShow.title}</h4>
+                    <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
                     <input class="tvShow__id" type="hidden" value="${tvShow.id}">
                 </div>
                `
