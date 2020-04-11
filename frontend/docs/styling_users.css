@@ -5,35 +5,9 @@
     margin: 2rem auto;
     justify-content: space-evenly;
 }
-.users__specific_user {
-    justify-content: flex-start;
-    position: relative;
-    width: 50%;
-    max-width: 100px;
-    
-    outline: none;
-}
 .users__user_image {
     display: block;
-    width: 100%;
     height: auto;
-    margin-top: 10px;
-    border-radius: 100px;
-}
-.user__name_btn {
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(8, 40, 109, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    opacity:0;
-    color: white;
-    font-size: 18px;
-    padding: 4px;
-    text-align: center;
-    transition: all 0.7s linear;
-}
-.users__specific_user:hover .user__name_btn {
-    opacity: 1;
+    margin-top: 20px;
+    border-radius: 60px;
 }
