@@ -13,29 +13,31 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.25rem;
 }
-.users_imgs {
+.container__about-us {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: 2rem auto;
     justify-content: space-evenly;
 }
-.flexImg {
+.flexImg__about-us {
     justify-content: flex-start;
     position: relative;
     width: 50%;
     max-width: 100px;
     border: 1.5px solid rgba(0, 0, 0, 0.707);
     box-shadow: -3px 3px 0 0px rgba(0, 0, 0, 0.707);
+    border-radius: 3px;
     outline: none;
 }
-.flexImg:hover {
-    border: 2.5px solid rgba(0, 0, 0, 0.707);
+.flexImg__about-us:hover {
+    border: 2px solid rgba(0, 0, 0, 0.707);
 }
-.user_img {
+.about-us_img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 3px;
 }
 .img-hover-block {
     position: absolute;
@@ -44,21 +46,18 @@ body {
     background: rgba(8, 40, 109, 0.5);
     color: #f1f1f1;
     width: 100%;
-    transition: .5s ease;
     opacity:0;
     color: white;
     font-size: 18px;
     padding: 4px;
     text-align: center;
-  }
-.flexImg:hover .img-hover-block {
+    transition: all 0.7s linear;
+}
+.flexImg__about-us:hover .img-hover-block {
     opacity: 1;
 }
 a:link, a:visited {
     text-decoration: none;
     color: white;
     outline: none;
-}
-.tvShow__image {
-    max-height: 150px;
 }
