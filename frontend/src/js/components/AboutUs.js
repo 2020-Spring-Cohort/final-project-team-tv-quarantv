@@ -4,7 +4,6 @@ export default function AboutUs() {
         <p class="p__about-us">Meet the team that brought you the QuaranTV aplication</p>
         <p class="p__about-us">Reach out and get to know us by clicking bellow</p>
         
-        
         <div class="container__about-us">
 
             <div class="flexImg__about-us"><a href="https://www.linkedin.com/in/tatyanaasb/" target="_blank"><img class="about-us_img" src="./img/users/tatyana.jpg" alt="Tatyana Bailey"></a>

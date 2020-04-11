@@ -8,8 +8,8 @@
 }
 .p__about-us {
     text-align: center;
-    color: rgba(255, 255, 255, 0.768);
-    font-family: 'Times New Roman', Times, serif;
+    color: black;  /* color: rgba(255, 255, 255, 0.768); ----once background color is set in main*/
+    font-family: 'Lucida Sans', sans-serif;
     font-size: 1.25rem;
 }
 .container__about-us {
@@ -27,18 +27,17 @@
     border-radius: 3px;
     outline: none;
 }
-.about-us_img:hover {
-    border: 2px solid rgba(0, 0, 0, 0.707);
-}
 .about-us_img {
     display: block;
     width: 100%;
     height: auto;
     margin-top: 20px;
     border-radius: 3px;
-    max-width: 100px;
     border: 1.5px solid rgba(0, 0, 0, 0.707);
     box-shadow: -3px 3px 0 0px rgba(0, 0, 0, 0.707);
+}
+.about-us_img:hover {
+    border: 2px solid rgba(0, 0, 0, 0.707);
 }
 .img-hover-block {
     position: absolute;
