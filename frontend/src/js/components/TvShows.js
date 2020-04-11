@@ -1,6 +1,7 @@
 export default function TvShows(tvShows){
     return `
-    <h2>All TV Shows</h2>
+    <section class="tvShows"
+        <h2>All TV Shows</h2>
         <div class="tvShows__grid_container">
             ${tvShows.map(tvShow => {
                 return `
@@ -10,7 +11,8 @@ export default function TvShows(tvShows){
                     <input class="tvShow__id" type="hidden" value="${tvShow.id}">
                 </div>
                `
-        }).join("")}
+            }).join("")}
         </div>
+    </section
     `
 }

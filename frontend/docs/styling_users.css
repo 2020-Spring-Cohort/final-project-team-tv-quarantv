@@ -1,3 +1,7 @@
+.users {
+    padding: 30px;
+    text-align: center;
+}
 .users__grid_container {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +12,10 @@
 .users__user_image {
     display: block;
     height: auto;
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     border-radius: 60px;
+}
+.user__name_btn {
+    cursor: pointer;
 }
