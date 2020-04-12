@@ -20,3 +20,30 @@
 .tvShows__show_title {
     cursor: pointer;
 }
+.tvShows__specific_tvShow {
+    position: relative;
+    display: inline-table;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ac3c3cf5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 7px 5px;
+    z-index: 1;
+    transition: all 0.7s linear;
+}
+.tvShows__specific_tvShow:hover .dropdown-content {
+    display: block;
+}
+.p-dropdown {
+    font-size: 1.5em;
+}
+.icon {
+    width: 80px;
+    height: 60px;
+}
+.icon:hover {
+    opacity: .5;
+}

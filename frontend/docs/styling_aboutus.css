@@ -46,12 +46,12 @@
     background: rgba(8, 40, 109, 0.5);
     color: #f1f1f1;
     width: 100%;
+    transition: all 0.7s linear;
     opacity:0;
     color: white;
     font-size: 18px;
     padding: 4px;
     text-align: center;
-    transition: all 0.7s linear;
 }
 .flexImg__about-us:hover .img-hover-block {
     opacity: 1;
