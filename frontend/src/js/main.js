@@ -58,7 +58,7 @@ function home() {
     })
 }
 
-/// GOES TO ALL USERS VIEW FROM NAV BAR
+// Goes to all users view from nav bar
 
 function navUsers() {
     const usersNavButton = document.querySelector(".nav__users");
@@ -72,7 +72,7 @@ function navUsers() {
         )
     })
   
-/// GOES TO SPECIFIC USER FROM USERS VIEW
+// Goes to specific user from user view
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains('users__specific_user')){
             const userId = event.target.querySelector('.user__id').value;
@@ -92,7 +92,7 @@ function navUsers() {
         )}
     })
 
-/// DISPLAYS ADD TV SHOW OPTION
+// Displays add tv show option
     mainDiv.addEventListener("click", function() {
         const watchlistAddShowSection = mainDiv.querySelector(".watchlist__add_show");
         if(event.target.classList.contains('watchlist__add_show_button')){
@@ -103,7 +103,7 @@ function navUsers() {
             )
         }
     })
-/// ADDS TV SHOW TO WATCHLIST
+// Adds tv show to watchlist
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('watchlistaddshow__submit')){
             const userId = document.querySelector('.user__id').value;
@@ -138,18 +138,17 @@ function navUsers() {
             watchlistAddShowButtonSection.innerHTML = WatchlistAddShowButtonSection();
         }
     })
-///////////////////////////////////////////////////////////////////////////
-/////////////////////////////////*************////////////////////////////
 
+// Get the edit watchlist view
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('edit-watchList__submit')){
             const WatchId = event.target.parentElement.querySelector('.watch__id').value;
-            console.log(WatchId);
+            //console.log(WatchId);
 
             apiActions.getRequest(
                 `http://localhost:51880/api/Watchlist/${WatchId}`,
                 WatchListEdit => {
-                    console.log(WatchListEdit);
+                    //console.log(WatchListEdit);
                     mainDiv.innerHTML = EditWatchlist( WatchListEdit);
                 }
             )
@@ -157,7 +156,7 @@ function navUsers() {
         }
     })
 
-
+// Perform edit watchlist PUT and return watchlist view
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('update-watchList__submit')){
             const watchId = event.target.parentElement.querySelector('.watch__id').value;
@@ -176,7 +175,7 @@ function navUsers() {
                 Status: status
                 };
 
-                console.log(WatchData);
+                //console.log(WatchData);
 
       apiActions.putRequest(
         `http://localhost:51880/api/Watchlist/${watchId}`,
@@ -201,18 +200,17 @@ function navUsers() {
  })
 
 
-////////////////////////////////*************////////////////////////////
-/////////////////////////////////////////////////////////////////////////
+// Get the add review view
 
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('addReview-watchList__submit')){
             const WatchId = event.target.parentElement.querySelector('.watch__id').value;
-            console.log(WatchId);
+            //console.log(WatchId);
 
             apiActions.getRequest(
                 `http://localhost:51880/api/Watchlist/${WatchId}`,
                 ReviewAdd => {
-                    console.log(ReviewAdd);
+                    //console.log(ReviewAdd);
                     mainDiv.innerHTML = ReviewAddToWatchlist(ReviewAdd);
                 }
             )
@@ -220,15 +218,16 @@ function navUsers() {
         }
     })
 
+// Perform add review to a particular show PUT request
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('addReview-watchList__submit')){
             const watchId = event.target.parentElement.querySelector('.watch__id').value;
-            const userId = event.target.parentElement.querySelector('.user__id').value;
-            const tvshowId = event.target.parentElement.querySelector('.tv__id').value;
+            const userId = document.querySelector('.user__id').value;
+            const tvshowId = document.querySelector('.tv__id').value;
             const review = event.target.parentElement.querySelector('.update-review').value;
             const rating = event.target.parentElement.querySelector('.update-rating').value;
             const status = event.target.parentElement.querySelector('.update-status').value;
-            
+
             const WatchData = {
                 Id: watchId,
                 UserId: userId,
@@ -237,37 +236,28 @@ function navUsers() {
                 Rating: rating,
                 Status: status
                 };
-                console.log(WatchData);
+                //console.log(WatchData);
             apiActions.putRequest(
             `http://localhost:51880/api/Watchlist/${watchId}`,
             WatchData,
             a => {
-                const watchlistGrid = document.createElement('div');
-                watchlistGrid.classList.add('watchlist__upper_grid_container');
-                watchlistGrid.innerHTML = WatchlistGrid();
-                apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
-                user => {
-                    mainDiv.innerHTML = WatchlistUserInfo(user);
-                    mainDiv.appendChild(watchlistGrid);
-                    apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
-                    usersWatchlist => {
-                        WatchlistFilter(usersWatchlist);
+                apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvshowId}`,
+                tvShow => {
+                    mainDiv.innerHTML = TvShowSelection(tvShow);
                     }
-                    )
-                }
-            )}
+                )}
             )
         }
     })
-//////////////////////////////////////////delete//////////////////////
 
+// Delete a show from a user's watchlist
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains('deleteReview-watchList__submit')){
             const WatchId = event.target.parentElement.querySelector('.watch__id').value;
             const WatchUserId = event.target.parentElement.querySelector('.watch__Userid').value;
             localStorage.setItem("User__Id",WatchUserId);
             //alert("UserId ="+ localStorage.User__Id);
-            console.log(WatchId);
+            //console.log(WatchId);
 
             apiActions.deleteRequest(
                 `http://localhost:51880/api/Watchlist/${WatchId}`,
@@ -293,7 +283,7 @@ function navUsers() {
 
 }
 
-/// GOES TO ALL TV SHOWS VIEW FROM NAV BAR
+/// Goes to all tv shows view from nav bar
 function navTvShows() {
     const tvShowsNavButton = document.querySelector(".nav__tvshows");
     const mainDiv = document.querySelector(".main_div");
@@ -305,7 +295,7 @@ function navTvShows() {
         )
     })
 
-/// GOES TO SPECIFIC TV SHOW FROM ALL TV SHOWS VIEW
+/// Goes to a specific tv show from tv shows
  
    mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("tvShows__specific_tvShow")){
@@ -317,7 +307,7 @@ function navTvShows() {
         )
         }
     })
-    /// Add event listener to Click comments button and load all comments
+    // Add event listener to Click comments button and load all comments
     // Also loads add more comments at the bottom of the comments
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("view-comment__submit")){
@@ -332,7 +322,7 @@ function navTvShows() {
             tvShowButtonSection.innerHTML = TvShowSelectionShowReviewButton();
         }
     })
-    //returns to the main tvShow view after clicking review button
+    // Returns to the main tvShow view after clicking review button
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("tvShowSelection__reload_reviews")){
             const tvShowId = document.querySelector('.tvShow__id').value;
@@ -343,7 +333,7 @@ function navTvShows() {
         )
         }
     })
-    //POST request to add comment to a specific show
+    // POST request to add comment to a specific show
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("add-comment__submit")){
             const tvShowId = document.querySelector(".tvShow__id").value;
