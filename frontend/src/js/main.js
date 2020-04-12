@@ -303,6 +303,26 @@ function navTvShows() {
         }
     })
 
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("users__name_btn")){
+            const userId = event.target.parentElement.querySelector(".users__id").value;
+            const watchlistGrid = document.createElement('div');
+            watchlistGrid.classList.add('watchlist__upper_grid_container');
+            watchlistGrid.innerHTML = WatchlistGrid();
+            apiActions.getRequest(`http://localhost:51880/api/User/${userId}`,
+            user => {
+                mainDiv.innerHTML = WatchlistUserInfo(user);
+                mainDiv.appendChild(watchlistGrid);
+                apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${userId}`,
+                usersWatchlist => {
+                    WatchlistFilter(usersWatchlist);
+                }
+                )
+            }
+        )
+        }
+    })
+
     // Add event listener to Click comments button and load all comments
     // Also loads add more comments at the bottom of the comments
     mainDiv.addEventListener("click", function() {
