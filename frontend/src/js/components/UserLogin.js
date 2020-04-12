@@ -2,7 +2,7 @@ export default function UserLogin(users){
     alert("ccccc"+sessionStorage.SearchUserName)
 
     users.map(element => {                
-        if (element.name == sessionStorage.SearchUserName)
+        if (element.id == sessionStorage.SearchUserName)
         {
             sessionStorage.clear();
             sessionStorage.setItem("Search__Id", element.id);

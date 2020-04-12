@@ -17,6 +17,7 @@ import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 import EditWatchlist from "./components/EditWatchlist";
 import ReviewAddToWatchlist from "./components/ReviewAddToWatchlist";
+import UserLogin from "./components/UserLogin";
 
 export default pageBuild
 
@@ -299,6 +300,50 @@ function navUsers() {
         }
     })
 
+
+    
+//////////////////////////////////////////////////////////////search
+
+
+mainDiv.addEventListener("click", function(){
+    if(event.target.classList.contains('Search-addReview-watchList__submit')){
+        alert("i am here");
+        const userName = event.target.parentElement.querySelector('.Login-add-__username').value;  
+        alert("name is" + userName); 
+        sessionStorage.clear();
+        sessionStorage.setItem("SearchUserName",userName);
+
+        //  mainDiv.addEventListener("click", function(){
+            apiActions.getRequest("http://localhost:51880/api/User",
+              users => {
+                  mainDiv.innerHTML = UserLogin(users);
+
+                  const watchlistGrid = document.createElement('div');
+                  watchlistGrid.classList.add('watchlist__upper_grid_container');
+                  watchlistGrid.innerHTML = WatchlistGrid();
+                  apiActions.getRequest(`http://localhost:51880/api/User/${sessionStorage.Search__Id}`,
+                  user => {
+                  mainDiv.innerHTML = WatchlistUserInfo(user);
+                  mainDiv.appendChild(watchlistGrid);
+                  
+                  apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${sessionStorage.Search__Id}`,
+                      usersWatchlist => {
+                          WatchlistFilter(usersWatchlist);
+                      }
+                      )
+                  }
+                  ) 
+
+
+
+                }
+          )
+        
+         
+         
+       }
+       
+})
 
 }
 
