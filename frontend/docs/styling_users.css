@@ -9,17 +9,13 @@
     margin: 2rem auto;
     justify-content: space-evenly;
 }
-.users__specific_user {
-    position: relative;
-    width: 50%;
-    justify-content: flex-start;
-    position: relative;
-    width: 50%;
-    max-width: 100px;
-}
 .users__user_image {
+    display: block;
+    width: 85px;
+    height: 100px;
     margin-top: 5px;
     margin-bottom: 20px;
+    border-radius: 50%;
 }
 .user__name_btn {
     cursor: pointer;
