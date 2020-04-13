@@ -1,6 +1,12 @@
-export default function WatchlistAddShow(tvShows) {
+//import UserLogin from "./UserLogin"
 
-   
+export default function WatchlistAddShow(tvShows) {
+  //  const input =document.querySelector('select');
+   // localStorage.setItem("V__id",input.value);
+
+alert("zzzzzzzzzzzzzzzz"+localStorage.vistorId);
+
+  if(localStorage.vistorId == localStorage.LoginhUserId);
     return `
     <p>Choose a show</p>
     <select class="watchlistaddshow__show_id" type="dropdown">

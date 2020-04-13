@@ -1,6 +1,6 @@
 export default function WatchlistFilter(watchlist){
   
- alert("oooooooooooooooooooo"+localStorage.LoginhUserId);
+ 
   return `
     ${watchlist.map(element => {
         if(element.status == "Watched" && localStorage.LoginhUserId == element.user.id){

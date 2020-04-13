@@ -1,16 +1,18 @@
 export default function UserLogin(users){
-    alert("ccccc"+sessionStorage.LoginhUserId)
+    alert("ccccc"+localStorage.LoginhUserId)
 
+    
+   
     users.map(element => {                
-        if (element.id == sessionStorage.LoginhUserId)
+        if (element.id == localStorage.LoginhUserId)
         {
-            sessionStorage.clear();
+          //  sessionStorage.clear(Search__Id);
             sessionStorage.setItem("Search__Id", element.id);
         
-            alert("wwwwww"+sessionStorage.Search__Id)
+           
         }
         }).join("");     
   
-   alert("id============" + sessionStorage.Search__Id);
+   alert("id============" + localStorage.Search__Id);
    
 }
