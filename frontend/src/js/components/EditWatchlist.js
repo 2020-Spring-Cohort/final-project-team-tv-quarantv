@@ -16,7 +16,7 @@ export default function EditWatchlist(watch){
      <br><br>
      <label >Review</label><br>
      <input class="update-review" type="text" value="${watch.review}"><br><br>
-     <label >Rate</label><br>
+     <label >Rating</label><br>
      <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
      <input class="watch__id" type="hidden" value="${watch.id}">
      <input class="user__id" type="hidden" value="${watch.userId}">
@@ -44,7 +44,7 @@ export default function EditWatchlist(watch){
  <br><br>
  <label >Review</label><br>
  <input class="update-review" type="text" value="${watch.review}"><br><br>
- <label >Rate</label><br>
+ <label >Rating</label><br>
  <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
  <input class="watch__id" type="hidden" value="${watch.id}">
  <input class="user__id" type="hidden" value="${watch.userId}">
@@ -73,7 +73,7 @@ export default function EditWatchlist(watch){
  <br><br>
  <label >Review</label><br>
  <input class="update-review" type="text" value="${watch.review}"><br><br>
- <label >Rate</label><br>
+ <label >Rating</label><br>
  <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
  <input class="watch__id" type="hidden" value="${watch.id}">
  <input class="user__id" type="hidden" value="${watch.userId}">
