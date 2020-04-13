@@ -6,29 +6,34 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
-    grid-row-gap: 2em;
     padding: 1em;
-
-
-
-    /* display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    margin: 2rem auto;
-    justify-content: space-evenly; */
+    grid-row-gap: 2em;
+}
+.tvShows__grid_container article {
+    background: rgba(40, 40, 42, 0.925);
+    padding: 1;
+    margin-top: 1em;
+    border-radius: 1em;
 }
 .tvShows__show_image {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 30px;
     border-radius: 20px;
     max-height: 130px;
     max-width: 250px;
 }
 .tvShows__show_title {
     cursor: pointer;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    font-weight: normal;
 }
-.tvShows__specific_tvShow {
+.p_title-hover {
+    display: none;
+    color: rgba(0, 128, 0, 0.857);
+}
+.tvShows__show_title:hover .p_title-hover {
+    display: contents; 
+}
+.tvShows__grid_container article img {
     position: relative;
     display: inline-block;
 }
@@ -36,11 +41,10 @@
     display: none;
     position: absolute;
     background-color: #ac3c3cf5;
-    min-width: 160px;
+    min-width: 230px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 7px 10px;
     z-index: 1;
-    transition: all 0.7s linear;
 }
 .tvShows__specific_tvShow:hover .dropdown-content {
     display: block;
