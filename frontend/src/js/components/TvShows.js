@@ -1,6 +1,6 @@
 export default function TvShows(tvShows){
     return `
-    <section class="tvShows"
+    <section class="tvShows">
         <h2>All TV Shows</h2>
         <div class="tvShows__grid_container">
             ${tvShows.map(tvShow => {
@@ -23,6 +23,6 @@ export default function TvShows(tvShows){
                `
             }).join("")}
         </div>
-    </section
+    </section>
     `
 }
