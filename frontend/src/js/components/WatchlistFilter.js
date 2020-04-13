@@ -10,7 +10,6 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__watched_shows").appendChild(watchedShow);
             watchedShow.innerHTML +=  `<input class="watch__id"  type="hidden" value="${element.id}">
             <input class="watch__Userid"  type="hidden" value="${element.user.id}">` 
-          + ` <img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>` 
           + ` <button class='edit-watchList__submit'>Edit This Show </button>` 
           + ` <button class='addReview-watchList__submit'>Add Review </button>`
           + ` <button class='deleteReview-watchList__submit'>Delete This Show </button>` ;
