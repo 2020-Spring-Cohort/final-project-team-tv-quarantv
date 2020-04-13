@@ -412,7 +412,7 @@ function navTvShows() {
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("add-comment__submit")){
             const tvShowId = document.querySelector(".tvShow__id").value;
-            const userId = "6";
+            const userId = localStorage.LoginhUserId;
             const commentText = document.querySelector(".add-commentText").value;
             const commentTextArea = document.querySelector(".tvShowSelection__text_area");
             var requestBody = {
