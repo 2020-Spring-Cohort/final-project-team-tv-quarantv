@@ -1,5 +1,6 @@
 export default function WatchlistAddShow(tvShows) {
-    if(localStorage.vistorId == localStorage.Login_User__Id)
+
+   
     return `
     <p>Choose a show</p>
     <select class="watchlistaddshow__show_id" type="dropdown">

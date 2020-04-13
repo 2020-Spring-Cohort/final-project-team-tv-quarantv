@@ -308,10 +308,10 @@ function navUsers() {
 mainDiv.addEventListener("click", function(){
     if(event.target.classList.contains('Search-addReview-watchList__submit')){
         alert("i am here");
-        const userName = event.target.parentElement.querySelector('.Login-add-__username').value;  
-        alert("name is" + userName); 
-        sessionStorage.clear();
-        sessionStorage.setItem("SearchUserName",userName);
+        const user___Id = event.target.parentElement.querySelector('.Login-add-__username').value;  
+       alert("qqqqqqqqqqqqqq"+ user___Id );
+        localStorage.clear();
+        localStorage.setItem("LoginhUserId",user___Id);
 
         //  mainDiv.addEventListener("click", function(){
             apiActions.getRequest("http://localhost:51880/api/User",
