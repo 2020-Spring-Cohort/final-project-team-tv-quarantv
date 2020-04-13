@@ -8,12 +8,11 @@
     grid-template-rows: auto;
     padding: 1em;
     grid-row-gap: 2em;
-    background: rgba(40, 40, 42, 0.612);
+    background: rgba(40, 40, 42, 0.381);
 }
 .tvShows__grid_container article {
     padding: 1em;
     margin-top: 1em;
-    border-radius: 1em;
 }
 .tvShows__show_image {
     border-radius: 20px;
@@ -26,11 +25,11 @@
     letter-spacing: 1px;
     font-weight: normal;
 }
-.p_title-hover {
+.p_title-hover-btn {
     display: none;
     color: rgba(0, 128, 0, 0.857);
 }
-.tvShows__show_title:hover .p_title-hover {
+.tvShows__show_title:hover .p_title-hover-btn {
     display: contents; 
 }
 .tvShows__grid_container article img {
@@ -43,7 +42,7 @@
     background-color: #ac3c3cf5;
     min-width: 230px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 7px 10px;
+    padding: 10px 10px;
     z-index: 1;
     transform: translate(15%,-10%);
 }
@@ -52,6 +51,8 @@
 }
 .p-dropdown {
     font-size: 1.20em;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .icon {
     width: 60px;
