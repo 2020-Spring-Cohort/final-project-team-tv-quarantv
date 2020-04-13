@@ -87,7 +87,8 @@ function navUsers() {
         if(event.target.classList.contains('users__specific_user')){
             const userId = event.target.querySelector('.user__id').value;
             //local storge
-            localStorage.clear();
+          var vistorId =0;
+           localStorage.removeItem(vistorId);
             localStorage.setItem("vistorId",userId);
             const watchlistGrid = document.createElement('div');
             watchlistGrid.classList.add('watchlist__upper_grid_container');
@@ -310,17 +311,11 @@ function navUsers() {
 
 mainDiv.addEventListener("click", function(){
     if(event.target.classList.contains('Search-addReview-watchList__submit')){
-        alert("i am here");
-        const user___Id = event.target.parentElement.querySelector('.Login-add-__username').value;  
-       alert("qqqqqqqqqqqqqq"+ user___Id );
-        localStorage.clear();
-        localStorage.setItem("LoginhUserId",user___Id);
-
-        //  mainDiv.addEventListener("click", function(){
+      const user___Id = event.target.parentElement.querySelector('.Login-add-__username').value;  
+      localStorage.setItem("LoginhUserId",user___Id);      
             apiActions.getRequest("http://localhost:51880/api/User",
               users => {
                   mainDiv.innerHTML = UserLogin(users);
-
                   const watchlistGrid = document.createElement('div');
                   watchlistGrid.classList.add('watchlist__upper_grid_container');
                   watchlistGrid.innerHTML = WatchlistGrid();
@@ -337,12 +332,8 @@ mainDiv.addEventListener("click", function(){
                   }
                   ) 
 
-
-
                 }
-          )
-        
-         
+          )        
          
        }
        

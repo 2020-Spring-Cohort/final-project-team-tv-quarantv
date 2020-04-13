@@ -12,7 +12,6 @@ export default function Home(users) {
             `
         }).join("")}
     </select>
-
     <button class='Search-addReview-watchList__submit'>Log in</button>
     </div> 
        
