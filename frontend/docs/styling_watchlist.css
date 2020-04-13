@@ -1,0 +1,9 @@
+.watchlist__grid_items_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.tvShow__image {
+    border-radius: 20px;
+    max-height: 130px;
+    max-width: 250px;
+}
