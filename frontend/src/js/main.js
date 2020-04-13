@@ -17,6 +17,7 @@ import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 import EditWatchlist from "./components/EditWatchlist";
 import ReviewAddToWatchlist from "./components/ReviewAddToWatchlist";
+import UserLogin from "./components/UserLogin";
 
 export default pageBuild
 
@@ -54,7 +55,16 @@ function home() {
     const homeNav = document.querySelector('.nav__home');
     const mainDiv = document.querySelector('.main_div');
     homeNav.addEventListener('click', function(){
-        mainDiv.innerHTML = Home();
+        ////////////////////////////////
+        apiActions.getRequest("http://localhost:51880/api/User",
+        users => {
+            console.log(users);
+            //mainDiv.innerHTML = Users(users);
+            mainDiv.innerHTML = Home(users);
+        }
+    )
+        /////////////////////////////////
+      //  mainDiv.innerHTML = Home();
     })
 }
 
@@ -75,6 +85,10 @@ function navUsers() {
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains('users__specific_user')){
             const userId = event.target.querySelector('.user__id').value;
+            //local storge
+          var vistorId =0;
+           localStorage.removeItem(vistorId);
+            localStorage.setItem("vistorId",userId);
             const watchlistGrid = document.createElement('div');
             watchlistGrid.classList.add('watchlist__upper_grid_container');
             watchlistGrid.innerHTML = WatchlistGrid();
@@ -276,7 +290,40 @@ function navUsers() {
             )}
             )
         }
-    })
+    })  
+//////////////////////////////////////////////////////////////Login
+
+
+mainDiv.addEventListener("click", function(){
+    if(event.target.classList.contains('Search-addReview-watchList__submit')){
+      const user___Id = event.target.parentElement.querySelector('.Login-add-__username').value;  
+      localStorage.setItem("LoginhUserId",user___Id);      
+            apiActions.getRequest("http://localhost:51880/api/User",
+              users => {
+                  mainDiv.innerHTML = UserLogin(users);
+                  const watchlistGrid = document.createElement('div');
+                  watchlistGrid.classList.add('watchlist__upper_grid_container');
+                  watchlistGrid.innerHTML = WatchlistGrid();
+                  apiActions.getRequest(`http://localhost:51880/api/User/${localStorage.LoginhUserId}`,
+                  user => {
+                  mainDiv.innerHTML = WatchlistUserInfo(user);
+                  mainDiv.appendChild(watchlistGrid);
+                  
+                  apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${localStorage.LoginhUserId}`,
+                      usersWatchlist => {
+                          WatchlistFilter(usersWatchlist);
+                      }
+                      )
+                  }
+                  ) 
+
+                }
+          )        
+         
+       }
+       
+  })
+
 }
 
 // Goes to all tv shows view from nav bar
