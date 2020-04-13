@@ -325,9 +325,12 @@ function navUsers() {
         if(event.target.classList.contains("watched_show__title")
         || event.target.classList.contains("watching_show__title")
         || event.target.classList.contains("tobewatched_show__title")){
-            
             const tvShowId = event.target.parentElement.querySelector(".watch__tvShowId").value;
-            console.log(tvShowId);
+            apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
+            tvShow => {
+                mainDiv.innerHTML = TvShowSelection(tvShow);
+            }
+        )
         }
     })
 }
