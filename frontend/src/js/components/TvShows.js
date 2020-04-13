@@ -13,6 +13,7 @@ export default function TvShows(tvShows){
                         <p class="p-dropdown">Start Watching</p>
                         <a href="https://www.netflix.com/" target="_blank"><img class="icon" src="./img/design/netflix.jpg" alt="netflix.com"></a>
                         <a href="https://www.amazon.com/" target="_blank"><img class="icon" src="./img/design/amazon.jpg" alt="amazon.com"></a>
+                        </br>
                         <a href="https://www.imdb.com/" target="_blank"><img class="icon" src="./img/design/imdb.jpg" alt="imdb.com"></a>
                         <a href="https://www.youtube.com/" target="_blank"><img class="icon" src="./img/design/youtube.jpg" alt="youtube.com"></a>
                     </div>

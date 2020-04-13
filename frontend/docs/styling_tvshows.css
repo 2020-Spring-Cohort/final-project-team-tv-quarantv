@@ -3,11 +3,19 @@
     text-align: center;
 }
 .tvShows__grid_container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 2em;
+    padding: 1em;
+
+
+
+    /* display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: 2rem auto;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
 }
 .tvShows__show_image {
     display: block;
@@ -22,7 +30,7 @@
 }
 .tvShows__specific_tvShow {
     position: relative;
-    display: inline-table;
+    display: inline-block;
 }
 .dropdown-content {
     display: none;
@@ -30,7 +38,7 @@
     background-color: #ac3c3cf5;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 7px 5px;
+    padding: 7px 10px;
     z-index: 1;
     transition: all 0.7s linear;
 }
@@ -43,6 +51,7 @@
 .icon {
     width: 80px;
     height: 60px;
+    margin: 2px;
 }
 .icon:hover {
     opacity: .5;
