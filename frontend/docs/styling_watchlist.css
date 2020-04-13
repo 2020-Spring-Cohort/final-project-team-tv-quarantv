@@ -8,14 +8,52 @@
     padding: 20px;
     width: 35%;
     padding: 1em;
-    font-family: "Caladea";
     font-size: 18px;
     box-shadow: 0px 0px 15px 0px #333333;
     color: black;
 }
-
 .tvShow__image {
     border-radius: 20px;
     max-height: 130px;
     max-width: 200px;
+}
+button.watchlist__add_show_button {
+    font-size: 1.3rem;
+    padding: .5rem;
+    border: none;
+    color: #fff;
+    background: rgba(0, 128, 0, 0.53);
+    border-radius: 7px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 2rem;
+}
+button.edit-watchList__submit {
+    background: rgba(99, 144, 233, 0.734);
+}
+button.addReview-watchList__submit {
+    background: rgba(31, 104, 250, 0.898);
+}
+button.deleteReview-watchList__submit{
+    background: rgba(162, 9, 4, 0.53);
+}
+button.edit-watchList__submit, 
+button.deleteReview-watchList__submit, 
+button.addReview-watchList__submit {
+    border: none;
+    color: black;
+    font-size: 1.0rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 7px;
+    cursor: pointer;
+    outline: none;
+    margin: .05rem;
+    box-shadow: 0px 0px 1px 2px black;
+}
+button.watchlist__add_show_button:hover, 
+button.edit-watchList__submit:hover,
+button.deleteReview-watchList__submit:hover,
+button.addReview-watchList__submit:hover {
+    box-shadow: 2px -3px 3px 1px black;
+    opacity: .8;
 }
