@@ -60,10 +60,8 @@ export default function TvShows(tvShows){
                             <h4 class="tvShows__show_title">${tvShow.title} 
                             <h3>Watched = ${WatchedSum}</h3><br>
                             <h3>Watching = ${WatchingSum}</h3><br>  
-                            <h3>Rating = ${Stars}<br><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
-                            <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
-                            <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
-                            <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
+                            <h3><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
+                           
                             </h3><br>
                             <p class="p_title-hover-btn">>></p></h4>
                             <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
@@ -87,7 +85,7 @@ export default function TvShows(tvShows){
                            <h4 class="tvShows__show_title">${tvShow.title} 
                            <h3>Watched = ${WatchedSum}</h3><br>
                            <h3>Watching = ${WatchingSum}</h3><br>  
-                           <h3>Rating = ${Stars}<br><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
+                           <h3><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                            <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         
                            </h3><br>
@@ -113,7 +111,7 @@ export default function TvShows(tvShows){
                           <h4 class="tvShows__show_title">${tvShow.title} 
                           <h3>Watched = ${WatchedSum}</h3><br>
                           <h3>Watching = ${WatchingSum}</h3><br>  
-                          <h3>Rating = ${Stars}<br><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
+                          <h3><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                           <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                           <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                          
@@ -140,7 +138,7 @@ export default function TvShows(tvShows){
                         <h4 class="tvShows__show_title">${tvShow.title} 
                         <h3>Watched = ${WatchedSum}</h3><br>
                         <h3>Watching = ${WatchingSum}</h3><br>  
-                        <h3>Rating = ${Stars}<br><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
+                        <h3><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                        <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                        <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
@@ -167,7 +165,7 @@ export default function TvShows(tvShows){
                        <h4 class="tvShows__show_title">${tvShow.title} 
                        <h3>Watched = ${WatchedSum}</h3><br>
                        <h3>Watching = ${WatchingSum}</h3><br>  
-                       <h3>Rating = ${Stars}<br><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
+                       <h3><img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                        <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                        <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                        <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
