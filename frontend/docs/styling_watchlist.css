@@ -1,3 +1,4 @@
+/* ---BASIC & SET-UP--- */
 .watchlist__add_show > p,
 .update-Watched > p {
     font-family: sans-serif;
@@ -6,7 +7,7 @@ label {
     font-family: sans-serif;
     font-size: 1.1rem;
 }
-    /* ---ADD A SHOW TO LIST BUTTONS & FORM--- */
+/* ---ADD A SHOW TO LIST BUTTONS & FORM--- */
 button.watchlist__add_show_button,
 button.watchlistaddshow__submit {
     font-size: 1.3rem;
