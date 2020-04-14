@@ -1,6 +1,36 @@
+/* LOG IN */
+.Login-add-__username {
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 9px;
+    font-size: 1.25rem;
+    box-shadow: inset 7px 0px 10px 0px rgb(219, 80, 61);
+    border: none;
+    outline: none;
+}
+.Login-add-__username:focus-within {
+    box-shadow: 0 0 10px rgb(219, 80, 61);
+}
+button.Search-addReview-watchList__submit {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #FFFFFF, #DB4F3D);
+    box-shadow: 0 0 10px rgba(219, 80, 61, 0.7);
+    border-radius: 8px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+button.Search-addReview-watchList__submit:hover {
+    background: linear-gradient(to left, #FFFFFF, #dbd63d, #DB4F3D);
+}
+/* ---ALL MEMBERS DISPLAY--- */
 .users {
     padding: 30px;
     text-align: center;
+    background: linear-gradient(to left, #FFFFFF, #DB4F3D);
 }
 h4.user__name_btn {
     margin-top: 7px;

@@ -1,21 +1,20 @@
 .tvShows {
     padding: 30px;
     text-align: center;
+    background: linear-gradient(to left, #FFFFFF, #DB4F3D);
 }
 .tvShows__grid_container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     padding: 1em;
-    grid-row-gap: 2em;
 }
 .tvShows__grid_container article {
-    padding: 1em;
-    margin-top: 1em;
+    padding: .25em;
 }
 .tvShows__show_image {
     border-radius: 20px;
-    max-height: 130px;
+    max-height: 110px;
     max-width: 250px;
 }
 .tvShows__show_title {
@@ -65,4 +64,46 @@
 /* ----SPECIFIC TV SHOW INFO---- */
 .tvShow__grid_container {
     display: grid;
+}
+.tvShow__grid_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 1;
+    background: linear-gradient(to left, #FFFFFF, #DB4F3D);
+}
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+.tvShow__grid_container > div {
+    background-color: rgba(245, 255, 250, 0);
+    margin: 1px;
+}
+
+.tvShowSelection__specific_user {
+    text-align: left;  
+    width: 400px;
+}
+.tvShowSelection__tvShow_info {
+    text-align: center;
+    border: 5px solid white;
+    padding:  0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 0px 0px 8px 0px;
+    width: 300px;
+}
+.tvShowSelection__text_area {
+    border: 5px solid white;
+    padding:  0em 1em;
+    border-radius: 16px;
+    line-height: 2;
+    box-shadow: 0px 0px 8px 0px;
+    width: 420px;
+}
+span {
+    cursor: pointer;
 }
