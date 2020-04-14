@@ -19,7 +19,6 @@ export default function WatchlistGrid(){
             <hr>
         </div>
     </div>
-    
     `
     else
     return ` 
@@ -28,15 +27,14 @@ export default function WatchlistGrid(){
             <h3>Watching</h3>
             <hr>
         </div>
-        <div class="watchlist__watched_shows">
-            <h3>Watched</h3>
-            <hr>
-        </div>
         <div class="watchlist__tobewatched_shows">
             <h3>To Be Watched</h3>
             <hr>
         </div>
+        <div class="watchlist__watched_shows">
+            <h3>Watched</h3>
+            <hr>
+        </div>
     </div>
-        
     `
 }

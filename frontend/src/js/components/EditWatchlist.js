@@ -3,7 +3,6 @@ export default function EditWatchlist(watch){
   
     return `
      <section class="update-Watched">
-     <label>Tv Show Title</label><br>
      <h4>${watch.tvShow.title}</h4><br> 
  
      <p>Update the Status</p>
@@ -13,11 +12,11 @@ export default function EditWatchlist(watch){
      <option value="Watching">Watching</option>       
      </select>
  
-     <br><br>
+     <br>
      <label >Review</label><br>
-     <input class="update-review" type="text" value="${watch.review}"><br><br>
+     <input class="update-review" type="text" value="${watch.review}"><br>
      <label >Rate</label><br>
-     <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
+     <input class="update-rating" type="text" value="${watch.rating}"><br>
      <input class="watch__id" type="hidden" value="${watch.id}">
      <input class="user__id" type="hidden" value="${watch.userId}">
      <input class="tv__id" type="hidden" value="${watch.tvShowId}">
@@ -31,7 +30,6 @@ export default function EditWatchlist(watch){
   
  return `
  <section class="update-Watched">
- <label>Tv Show Title</label><br>
  <h4>${watch.tvShow.title}</h4><br>  
  
  <p>Update the Status</p>
@@ -41,11 +39,11 @@ export default function EditWatchlist(watch){
  <option value="Watching">Watching</option>      
  </select>
  
- <br><br>
+ <br>
  <label >Review</label><br>
- <input class="update-review" type="text" value="${watch.review}"><br><br>
+ <input class="update-review" type="text" value="${watch.review}"><br>
  <label >Rate</label><br>
- <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
+ <input class="update-rating" type="text" value="${watch.rating}"><br>
  <input class="watch__id" type="hidden" value="${watch.id}">
  <input class="user__id" type="hidden" value="${watch.userId}">
  <input class="tv__id" type="hidden" value="${watch.tvShowId}">
@@ -65,16 +63,16 @@ export default function EditWatchlist(watch){
  
  <p>Update the Status</p>
  <select class="update-status" type="dropdown">
- <option value="ToBeWatched">To Be Watched</option>
- <option value="Watching">Watching</option>    
- <option value="Watched">Watched</option>   
+ <option value="Watched">To Be Watched</option>
+ <option value="ToBeWatched">Watching</option>    
+ <option value="Watching">Watched</option>   
  </select>
  
- <br><br>
+ <br>
  <label >Review</label><br>
- <input class="update-review" type="text" value="${watch.review}"><br><br>
+ <input class="update-review" type="text" value="${watch.review}"><br>
  <label >Rate</label><br>
- <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
+ <input class="update-rating" type="text" value="${watch.rating}"><br>
  <input class="watch__id" type="hidden" value="${watch.id}">
  <input class="user__id" type="hidden" value="${watch.userId}">
  <input class="tv__id" type="hidden" value="${watch.tvShowId}">

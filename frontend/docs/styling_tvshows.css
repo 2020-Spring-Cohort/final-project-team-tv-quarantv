@@ -8,7 +8,6 @@
     grid-template-rows: auto;
     padding: 1em;
     grid-row-gap: 2em;
-    background: rgba(40, 40, 42, 0.381);
 }
 .tvShows__grid_container article {
     padding: 1em;
@@ -66,6 +65,4 @@
 /* ----SPECIFIC TV SHOW INFO---- */
 .tvShow__grid_container {
     display: grid;
-    /* i think here might be best too have a grid 
-    have show info w/image to right sticky like a nav bar and current status or history on the other side with ability to scroll??? */
 }
