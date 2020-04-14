@@ -16,15 +16,21 @@ export default function EditWatchlist(watch){
      <br><br>
      <label >Review</label><br>
      <input class="update-review" type="text" value="${watch.review}"><br><br>
-     <label >Rate</label><br>
-     <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
+     <label >Rating</label><br>
+     <select class="update-rating" type="dropdown">
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>     
+     <option value="4">4</option>
+     <option value="5">5</option>   
+     </select><br><br>
+
      <input class="watch__id" type="hidden" value="${watch.id}">
      <input class="user__id" type="hidden" value="${watch.userId}">
      <input class="tv__id" type="hidden" value="${watch.tvShowId}">
         
      <button class="update-watchList__submit">Save Changes</button>
      </section>
- 
  `;
  
  if(watch.status == "Watching")
@@ -44,7 +50,7 @@ export default function EditWatchlist(watch){
  <br><br>
  <label >Review</label><br>
  <input class="update-review" type="text" value="${watch.review}"><br><br>
- <label >Rate</label><br>
+ <label >Rating</label><br>
  <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
  <input class="watch__id" type="hidden" value="${watch.id}">
  <input class="user__id" type="hidden" value="${watch.userId}">
@@ -73,7 +79,7 @@ export default function EditWatchlist(watch){
  <br><br>
  <label >Review</label><br>
  <input class="update-review" type="text" value="${watch.review}"><br><br>
- <label >Rate</label><br>
+ <label >Rating</label><br>
  <input class="update-rating" type="text" value="${watch.rating}"><br><br> 
  <input class="watch__id" type="hidden" value="${watch.id}">
  <input class="user__id" type="hidden" value="${watch.userId}">
