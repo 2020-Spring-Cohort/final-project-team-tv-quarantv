@@ -81,11 +81,12 @@ function navUsers() {
         )
     })
   
-    // Goes to specific user from user view
+    // Goes to specific user from users view
     mainDiv.addEventListener("click", function() {
-        if(event.target.classList.contains('users__specific_user')){
-            const userId = event.target.querySelector('.user__id').value;
-            //local storge
+        if(event.target.classList.contains('user__name_btn')
+        || event.target.classList.contains('users__user_image')){
+            const userId = event.target.parentElement.querySelector('.user__id').value;
+            //local storage
           var vistorId =0;
            localStorage.removeItem(vistorId);
             localStorage.setItem("vistorId",userId);
@@ -290,40 +291,49 @@ function navUsers() {
             )}
             )
         }
-    })  
-//////////////////////////////////////////////////////////////Login
+    })
 
-
-mainDiv.addEventListener("click", function(){
-    if(event.target.classList.contains('Search-addReview-watchList__submit')){
-      const user___Id = event.target.parentElement.querySelector('.Login-add-__username').value;  
-      localStorage.setItem("LoginhUserId",user___Id);      
-            apiActions.getRequest("http://localhost:51880/api/User",
-              users => {
-                  mainDiv.innerHTML = UserLogin(users);
-                  const watchlistGrid = document.createElement('div');
-                  watchlistGrid.classList.add('watchlist__upper_grid_container');
-                  watchlistGrid.innerHTML = WatchlistGrid();
-                  apiActions.getRequest(`http://localhost:51880/api/User/${localStorage.LoginhUserId}`,
-                  user => {
-                  mainDiv.innerHTML = WatchlistUserInfo(user);
-                  mainDiv.appendChild(watchlistGrid);
-                  
-                  apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${localStorage.LoginhUserId}`,
-                      usersWatchlist => {
-                          WatchlistFilter(usersWatchlist);
-                      }
-                      )
-                  }
-                  ) 
-
+    // Login
+    mainDiv.addEventListener("click", function(){
+        if(event.target.classList.contains('Search-addReview-watchList__submit')){
+        const user___Id = event.target.parentElement.querySelector('.Login-add-__username').value;  
+        localStorage.setItem("LoginhUserId",user___Id);      
+                apiActions.getRequest("http://localhost:51880/api/User",
+                users => {
+                    mainDiv.innerHTML = UserLogin(users);
+                    const watchlistGrid = document.createElement('div');
+                    watchlistGrid.classList.add('watchlist__upper_grid_container');
+                    watchlistGrid.innerHTML = WatchlistGrid();
+                    apiActions.getRequest(`http://localhost:51880/api/User/${localStorage.LoginhUserId}`,
+                    user => {
+                    mainDiv.innerHTML = WatchlistUserInfo(user);
+                    mainDiv.appendChild(watchlistGrid);
+                    
+                    apiActions.getRequest(`http://localhost:51880/api/Watchlist/User/${localStorage.LoginhUserId}`,
+                        usersWatchlist => {
+                            WatchlistFilter(usersWatchlist);
+                        }
+                        )
+                    }
+                    )
                 }
-          )        
-         
-       }
-       
-  })
+            )
+        }
+    })
 
+    // Go to specific show when show name is clicked on in watchlist
+    mainDiv.addEventListener("click", function() {
+        if(event.target.classList.contains("watched_show__title")
+        || event.target.classList.contains("watching_show__title")
+        || event.target.classList.contains("tobewatched_show__title")){
+            const tvShowId = event.target.parentElement.querySelector(".watch__tvShowId").value;
+            apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
+            tvShow => {
+                mainDiv.innerHTML = TvShowSelection(tvShow);
+            }
+        )
+        }
+    })
 }
 
 // Goes to all tv shows view from nav bar
@@ -340,8 +350,9 @@ function navTvShows() {
 
     // Goes to a specific tv show from tv shows
     mainDiv.addEventListener("click", function() {
-        if(event.target.classList.contains("tvShows__specific_tvShow")){
-            const tvShowId = event.target.querySelector('.tvShow__id').value;
+        if(event.target.classList.contains("tvShows__show_title")
+        || event.target.classList.contains("tvShows__show_image")){
+            const tvShowId = event.target.parentElement.querySelector('.tvShow__id').value;
             apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
             tvShow => {
                 mainDiv.innerHTML = TvShowSelection(tvShow);
@@ -350,6 +361,7 @@ function navTvShows() {
         }
     })
 
+    // Go to user's watchlist when user name is clicked on in TvShowSelection view
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("users__name_btn")){
             const userId = event.target.parentElement.querySelector(".users__id").value;
@@ -402,7 +414,7 @@ function navTvShows() {
     mainDiv.addEventListener("click", function() {
         if(event.target.classList.contains("add-comment__submit")){
             const tvShowId = document.querySelector(".tvShow__id").value;
-            const userId = "6";
+            const userId = localStorage.LoginhUserId;
             const commentText = document.querySelector(".add-commentText").value;
             const commentTextArea = document.querySelector(".tvShowSelection__text_area");
             var requestBody = {

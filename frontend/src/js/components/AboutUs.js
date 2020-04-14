@@ -1,8 +1,8 @@
 export default function AboutUs() {
     return `
     <section class="about-us">
-        <p class="p__about-us">Meet the team that brought you the QuaranTV aplication</p>
-        <p class="p__about-us">Reach out and get to know us by clicking bellow</p>
+        <p class="p__about-us">Meet the team that brought you the QuaranTV application!</p>
+        <p class="p__about-us">Reach out and get to know us by clicking below.</p>
         
         <div class="container__about-us">
 
