@@ -11,16 +11,22 @@ export default function TvShowSelection(tvShow) {
             </div>
             <div class="tvShowSelection__text_area">
                 ${tvShow.watchlists.map(value => {
-                    return `
-                    <div class="tvShowSelection__specific_user"
-                        <p></p>
-                        <h4 class="users__name_btn">Name: ${value.user.name}</h4>
-                        <h4 class="users__show_status">Status: ${value.status}</h4>
-                        <h4 class="users__show__rating">Rating: ${value.rating}</h4>
-                        <h4 class="users__show_review">Review: ${value.review}</h4>
-                        <input class="users__id" type="hidden" value="${value.userId}">
-                    </div>
-                    `
+                    if(value.review != null)
+                    {
+                        if (value.review != "")
+                        {
+                            return `
+                            <div class="tvShowSelection__specific_user"
+                                <p></p>
+                                <h4 class="users__name_btn">Name: ${value.user.name}</h4>
+                                <h4 class="users__show_status">Status: ${value.status}</h4>
+                                <h4 class="users__show__rating">Rating: ${value.rating}</h4>
+                                <h4 class="users__show_review">Review: ${value.review}</h4>
+                                <input class="users__id" type="hidden" value="${value.userId}">
+                            </div>
+                            `
+                        }
+                    }
                 }).join("")}
             </div>
 
