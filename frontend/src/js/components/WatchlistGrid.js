@@ -6,7 +6,6 @@ export default function WatchlistGrid(){
         <div class="watchlist__watched_shows">
             <h3>Watched</h3>
             <hr>
-            
         </div>
 
         <div class="watchlist__watching_shows">
