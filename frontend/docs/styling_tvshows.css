@@ -63,3 +63,9 @@
 .icon:hover {
     opacity: .5;
 }
+/* ----SPECIFIC TV SHOW INFO---- */
+.tvShow__grid_container {
+    display: grid;
+    /* i think here might be best too have a grid 
+    have show info w/image to right sticky like a nav bar and current status or history on the other side with ability to scroll??? */
+}
