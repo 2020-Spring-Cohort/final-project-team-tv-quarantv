@@ -34,7 +34,7 @@ export default function TvShowSelection(tvShow) {
         </br>
         </br>
         <section class="tvShowSelection__button_section"> 
-            <button class="view-comment__submit">View Comments (Contains Spoilers!)</button>    
+            <button class="view-comment__submit">View Comments *Contains Spoilers!*</button>    
         </section> 
        
     `

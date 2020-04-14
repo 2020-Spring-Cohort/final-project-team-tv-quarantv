@@ -81,11 +81,12 @@ function navUsers() {
         )
     })
   
-    // Goes to specific user from user view
+    // Goes to specific user from users view
     mainDiv.addEventListener("click", function() {
-        if(event.target.classList.contains('users__specific_user')){
-            const userId = event.target.querySelector('.user__id').value;
-            //local storge
+        if(event.target.classList.contains('user__name_btn')
+        || event.target.classList.contains('users__user_image')){
+            const userId = event.target.parentElement.querySelector('.user__id').value;
+            //local storage
           var vistorId =0;
            localStorage.removeItem(vistorId);
             localStorage.setItem("vistorId",userId);
@@ -349,8 +350,9 @@ function navTvShows() {
 
     // Goes to a specific tv show from tv shows
     mainDiv.addEventListener("click", function() {
-        if(event.target.classList.contains("tvShows__specific_tvShow")){
-            const tvShowId = event.target.querySelector('.tvShow__id').value;
+        if(event.target.classList.contains("tvShows__show_title")
+        || event.target.classList.contains("tvShows__show_image")){
+            const tvShowId = event.target.parentElement.querySelector('.tvShow__id').value;
             apiActions.getRequest(`http://localhost:51880/api/TvShow/${tvShowId}`,
             tvShow => {
                 mainDiv.innerHTML = TvShowSelection(tvShow);

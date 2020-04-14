@@ -7,12 +7,15 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__watched_shows").appendChild(watchedShow);
             watchedShow.innerHTML +=  `<h5 class="watched_show__title">${element.tvShow.title}</h5>
             <input class="watch__id"  type="hidden" value="${element.id}">
-            <input class="watch__Userid"  type="hidden" value="${element.user.id}">` +
-            `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">` +
-            ` <button class='edit-watchList__submit'>Edit This Show </button>` 
+            <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
+          + ` </br>`
+          + ` <img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
+          + ` </br>`
+          + ` <input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
+          + ` <button class='edit-watchList__submit'>Edit</button>` 
           + ` <button class='addReview-watchList__submit'>Add Review </button>`
-          + ` <button class='deleteReview-watchList__submit'>Delete This Show </button>` ;
-         
+          + ` <button class='deleteReview-watchList__submit'>Delete</button>` ;
+         ;
         }
         else if(element.status == "Watching" && localStorage.LoginhUserId == element.user.id){
             const watchingShow = document.createElement("p");
@@ -20,10 +23,13 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__watching_shows").appendChild(watchingShow);
             watchingShow.innerHTML +=  `<h5 class="watching_show__title">${element.tvShow.title}</h5>
             <input class="watch__id"  type="hidden" value="${element.id}">
-            <input class="watch__Userid"  type="hidden" value="${element.user.id}">` +
-            `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">` +
-            " <button class='edit-watchList__submit'>Edit This Show </button>" 
-            + ` <button class='deleteReview-watchList__submit'>Delete This Show </button>` ;
+            <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
+            + `</br>`
+            + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
+            + `</br>`
+            + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
+            + `<button class='edit-watchList__submit'>Edit</button>`
+            + `<button class='deleteReview-watchList__submit'>Delete</button>` ;
           ;
         }
         else if(element.status == "ToBeWatched" && localStorage.LoginhUserId == element.user.id){
@@ -32,10 +38,13 @@ export default function WatchlistFilter(watchlist){
             document.querySelector(".watchlist__tobewatched_shows").appendChild(toBeWatchedShow);
             toBeWatchedShow.innerHTML +=  `<h5 class="tobewatched_show__title">${element.tvShow.title}</h5>
             <input class="watch__id"  type="hidden" value="${element.id}">
-            <input class="watch__Userid"  type="hidden" value="${element.user.id}">` +
-            `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">` +
-            " <button class='edit-watchList__submit'>Edit This Show </button>" 
-            + " <button class='deleteReview-watchList__submit'>Delete This Show </button>" ;
+            <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
+            + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
+            + `</br>`
+            + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
+            + `</br>`
+            + `<button class='edit-watchList__submit'>Edit</button>`
+            + `<button class='deleteReview-watchList__submit'>Delete</button>` ;
            ;
         }
        else if(element.status == "Watched" && localStorage.LoginhUserId != element.user.id){
@@ -45,8 +54,11 @@ export default function WatchlistFilter(watchlist){
           watchedShow.innerHTML +=  `<h5 class="watched_show__title">${element.tvShow.title}</h5>
           <input class="watch__id"  type="hidden" value="${element.id}">
           <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
-          + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`  ;
-       
+          + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
+          + `</br>`
+          + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
+          + `</br>`;
+       ;
       }
       else if(element.status == "Watching" && localStorage.LoginhUserId != element.user.id){
           const watchingShow = document.createElement("p");
@@ -55,7 +67,10 @@ export default function WatchlistFilter(watchlist){
           watchingShow.innerHTML +=  `<h5 class="watching_show__title">${element.tvShow.title}</h5>
           <input class="watch__id"  type="hidden" value="${element.id}">
           <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
-          + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">` ;
+          + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
+          + `</br>`
+          + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
+          + `</br>`;
         ;
       }
       else if(element.status == "ToBeWatched" && localStorage.LoginhUserId != element.user.id){
@@ -65,7 +80,10 @@ export default function WatchlistFilter(watchlist){
           toBeWatchedShow.innerHTML +=  `<h5 class="tobewatched_show__title">${element.tvShow.title}</h5>
           <input class="watch__id"  type="hidden" value="${element.id}">
           <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
-          + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">` ;
+          + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
+          + `</br>`
+          + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
+          + `</br>`;
          ;
       }  
     }).join("")}
