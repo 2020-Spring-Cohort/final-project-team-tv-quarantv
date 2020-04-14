@@ -14,6 +14,7 @@
     text-align: center;
 }
 .tvShow__image {
+    margin: 2px;
     border-radius: 20px;
     max-height: 130px;
     max-width: 200px;
@@ -21,13 +22,14 @@
 button.watchlist__add_show_button {
     font-size: 1.3rem;
     padding: .5rem;
-    border: none;
+    margin-top: 2rem;
     color: #fff;
     background: rgba(0, 128, 0, 0.53);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.87);
     border-radius: 7px;
     cursor: pointer;
+    border: none;
     outline: none;
-    margin-top: 2rem;
 }
 button.edit-watchList__submit {
     background: rgba(99, 144, 233, 0.734);
@@ -41,20 +43,66 @@ button.deleteReview-watchList__submit{
 button.edit-watchList__submit, 
 button.deleteReview-watchList__submit, 
 button.addReview-watchList__submit {
-    border: none;
-    color: black;
     font-size: 1.0rem;
     padding: 0.25rem 0.5rem;
+    margin: .25rem;
+    color: black;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.87);
     border-radius: 7px;
     cursor: pointer;
+    border: none;
     outline: none;
-    margin: .05rem;
-    box-shadow: 0px 0px 1px 2px black;
 }
 button.watchlist__add_show_button:hover, 
 button.edit-watchList__submit:hover,
 button.deleteReview-watchList__submit:hover,
 button.addReview-watchList__submit:hover {
-    box-shadow: 2px -3px 3px 1px black;
+    box-shadow: 2px -3px 3px 1px rgba(0, 0, 0, 0.87);
     opacity: .8;
 }
+
+
+ /* ----OTHER BUTTONS---- */
+/* trying to save team time to work on more important things */
+/* can be copied into style sheet it belongs to when the focus shifts */
+
+/* LOG IN */
+.Login-add-__username {
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    border: 3px solid rgba(219, 80, 61, 0.7);
+    outline: none;
+}
+.Login-add-__username:focus-within {
+    box-shadow: 0 0 10px rgba(219, 80, 61, 0.7);
+}
+button.Search-addReview-watchList__submit {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to left, #FFFFFF, #DB4F3D);
+    box-shadow: 0 0 10px rgba(219, 80, 61, 0.7);
+    border-radius: 8px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+button.Search-addReview-watchList__submit:hover {
+    background: linear-gradient(to left, #FFFFFF, #dbd63d, #DB4F3D);
+}
+button.view-comment__submit {
+    font-size: 1.3rem;
+    padding: .5rem;
+    margin-top: 2rem;
+    color: #fff;
+    background: rgba(0, 128, 0, 0.53);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.87);
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
