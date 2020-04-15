@@ -1,5 +1,5 @@
 export default function TvShows(tvShows){
-    var  WatchedSum =0;
+    var WatchedSum =0;
     var WatchingSum =0;
     var RatingSum =0;
     var Watched =[];

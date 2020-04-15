@@ -21,10 +21,11 @@ export default function TvShowSelection(tvShow) {
                         if (value.review != "")
                         {
                             return `
-                            <div class="tvShowSelection__specific_user">
-                                <h4 class="users__name_btn">Review by <span style="color:blue;">${value.user.name}</span></h4>
-                                <h4 class="users__show_status">Status: ${value.status } - Rating: ${value.rating}</h4>
-                                <h4 class="users__show_review"><i>Review: ${value.review}</i></h4>
+                            <div class="tvShowSelection__specific_user"
+                                <p></p>
+                                <h4 class="users__name_btn">Name: ${value.user.name}</h4>
+                                <h4 class="users__show__rating">Rating: ${value.rating}</h4>
+                                <h4 class="users__show_review">Review: ${value.review}</h4>
                                 <input class="users__id" type="hidden" value="${value.userId}">
                             </div>
                             <hr>
@@ -34,6 +35,5 @@ export default function TvShowSelection(tvShow) {
                 }).join("")}
             </div>
         </div>
-       
     `
 }

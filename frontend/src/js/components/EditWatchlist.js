@@ -75,9 +75,9 @@ export default function EditWatchlist(watch){
  
  <p>Update the Status</p>
  <select class="update-status" type="dropdown">
-    <option value="Watched">To Be Watched</option>
-    <option value="ToBeWatched">Watching</option>    
-    <option value="Watching">Watched</option>   
+    <option value="Watched">Watched</option>
+    <option value="ToBeWatched">To Be Watched</option>
+    <option value="Watching">Watching</option>
  </select><br>
  
  <label>Rating</label><br>
@@ -103,5 +103,3 @@ export default function EditWatchlist(watch){
  
  
  }
- 
- 

@@ -1,5 +1,4 @@
 export default function Users(users){
-   
     return `
     <section class="users">
         <h2>All Members</h2>
