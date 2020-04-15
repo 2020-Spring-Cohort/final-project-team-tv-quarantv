@@ -5,6 +5,7 @@
 /* -----ABOUT US----- */
 .about-us {
     padding: 30px;
+    background: linear-gradient(to left, #FFFFFF, #DB4F3D);
 }
 .p__about-us {
     text-align: center;

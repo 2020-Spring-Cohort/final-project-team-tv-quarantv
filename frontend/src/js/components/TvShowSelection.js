@@ -1,15 +1,20 @@
 export default function TvShowSelection(tvShow) {
     return `
         <div class="tvShow__grid_container">
-            <div class="tvShowSelection__tvShow_info"
-                <h2>${tvShow.title}</h2>
-                <img class="tvShow__image" src="./img/tvshows/${tvShow.image}" alt="${tvShow.image}"></img>
-                <h4>Number of seasons: ${tvShow.season}</h4>
-                <h4>Rated: ${tvShow.viewerDiscretion}</h4>
+            <div class="tvShowSelection__tvShow_info">
+                <h2 class="tvshow__individual-title">${tvShow.title}</h2>
+                <h4># of Seasons: ${tvShow.season} - Rated: ${tvShow.viewerDiscretion}</h4>
+                <img class="tvShow__images" src="./img/tvshows/${tvShow.image}" alt="${tvShow.image}"></img>
                 <input class="tvShow__id" type="hidden" value="${tvShow.id}">
                 </br>
+                </br>
+                <section class="tvShowSelection__button_section"> 
+                    <button class="view-comment__submit">View Comments <p>*Contains Spoilers!*</p></button>    
+                </section> 
             </div>
             <div class="tvShowSelection__text_area">
+                <h3>Popular Reviews</h3>
+                <hr>
                 ${tvShow.watchlists.map(value => {
                     if(value.review != null)
                     {
@@ -23,16 +28,12 @@ export default function TvShowSelection(tvShow) {
                                 <h4 class="users__show_review">Review: ${value.review}</h4>
                                 <input class="users__id" type="hidden" value="${value.userId}">
                             </div>
+                            <hr>
                             `
                         }
                     }
                 }).join("")}
             </div>
         </div>
-        </br>
-        </br>
-        <section class="tvShowSelection__button_section"> 
-            <button class="view-comment__submit">View Comments *Contains Spoilers!*</button>    
-        </section>
     `
 }

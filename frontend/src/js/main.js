@@ -29,6 +29,15 @@ function pageBuild(){
     navTvShows();
     aboutUs();
     home();
+    showHome();
+}
+function showHome(){
+    const mainDiv = document.querySelector('.main_div');
+    apiActions.getRequest("http://localhost:51880/api/User",
+        users => {
+            mainDiv.innerHTML = Home(users);
+        }
+    )
 }
 
 function header() {
