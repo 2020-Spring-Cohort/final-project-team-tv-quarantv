@@ -1,9 +1,7 @@
 export default function Home(users) {
-       
-    
     return `    
-    <p id="homepage-description">Home page</p>
-    <h2>All Users</h2>
+    <div class="homepage__container">
+    <p class="homepage-description">QuaranTV helps you connect with friends and family, in order to figure out what to watch next on your favorite streaming platform. Review shows, create a personalized watchlist, and get social after your binging in a spoiler-safe space!</p>
     <div class="users__grid_container">
     <select  id="list" name="u"  class="Login-add-__username" type="dropdown">
          ${users.map(user => {
@@ -14,7 +12,7 @@ export default function Home(users) {
     </select>
     <button class='Search-addReview-watchList__submit'>Log in</button>
     </div> 
-       
+    </div>
     ` ;
     
 }
