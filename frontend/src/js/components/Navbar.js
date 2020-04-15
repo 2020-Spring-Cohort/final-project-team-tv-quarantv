@@ -23,6 +23,16 @@ export default function Navbar() {
             <div class='nav__aboutus'>About Us</div>
          </div>
     </nav>
+
+
+
+    <nav class='navbar_list'>
+         <div class='navbarlist'>
+           
+            <div class='nav__tvshows'>Tv Shows</div>
+           
+         </div>
+    </nav>
     ` 
 }
 */

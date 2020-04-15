@@ -38,7 +38,13 @@ export default function Header(){
                                 <svg class="side-nav__icon">
                                     <use xlink:href="img/homepage/sprite.svg#icon-aircraft-take-off"></use>
                                 </svg>
-                                <span>Members</span>
+                                <span><nav class='navbar_list'>
+                                <div class='navbarlist'>
+                                  
+                                     <div class='nav__users'>Users</div>
+                                  
+                                </div>
+                           </nav></span>
                             </a>
                         </li>
                         <li class="side-nav__item">
@@ -46,7 +52,13 @@ export default function Header(){
                                 <svg class="side-nav__icon">
                                     <use xlink:href="img/homepage/sprite.svg#icon-key"></use>
                                 </svg>
-                                <span>TvShows</span>
+                                <span><nav class='navbar_list'>
+                                <div class='navbarlist'>
+                                  
+                                   <div class='nav__tvshows'>Tv Shows</div>
+                                  
+                                </div>
+                           </nav></span>
                             </a>
                         </li>
                         <li class="side-nav__item">
@@ -66,7 +78,9 @@ export default function Header(){
                     <div class="gallery">
                         <figure class="gallery__item">
                            <div class="japple">        
-      <main class="top"> <iframe width="805" height="469" src="https://www.youtube.com/embed/YuyrSDGk3N0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></main>
+      <main class="top"><div class="main_div">
+      <iframe  width="805" height="469" src="https://www.youtube.com/embed/_ZW-AZ2mNeA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <table  class "maindev" width="805" height="469"><tr><td>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</td></tr></main>
     </div>  
                         </figure>
                         <br>
@@ -74,8 +88,7 @@ export default function Header(){
                 <main ><div class="japple2"> <img src="img/homepage/Supergirl-TV-series-on-The-CW-season-two-key-art-canceled-or-renewed-e1472497949337.jpg" alt="Photo of qntv 1" class="tv__photo" >               
                 </main>
                 </main> <br>
-                <main > <img src="img/homepage/a.png" alt="Photo of qntv 1" class="tv__photo"  height="470" >
-                </main>
+                
                
             </div>            
         </div>
