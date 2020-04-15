@@ -19,7 +19,6 @@ export default function TvShowSelection(tvShow) {
                             <div class="tvShowSelection__specific_user"
                                 <p></p>
                                 <h4 class="users__name_btn">Name: ${value.user.name}</h4>
-                                <h4 class="users__show_status">Status: ${value.status}</h4>
                                 <h4 class="users__show__rating">Rating: ${value.rating}</h4>
                                 <h4 class="users__show_review">Review: ${value.review}</h4>
                                 <input class="users__id" type="hidden" value="${value.userId}">
@@ -29,13 +28,11 @@ export default function TvShowSelection(tvShow) {
                     }
                 }).join("")}
             </div>
-
         </div>
         </br>
         </br>
         <section class="tvShowSelection__button_section"> 
             <button class="view-comment__submit">View Comments *Contains Spoilers!*</button>    
-        </section> 
-       
+        </section>
     `
 }
