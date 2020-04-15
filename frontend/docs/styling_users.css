@@ -43,6 +43,9 @@ h4.user__name_btn {
     grid-template-rows: auto;
     padding: 1em;
     grid-row-gap: 2em;
+    border: 5px solid rgba(255, 255, 255, 0.503);
+    width: 500px;
+    margin: auto;
 }
 .users__user_image {
     width: 85px;

@@ -5,9 +5,16 @@
     width: 100%;
 }
 .tvShows__grid_container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+    border: 5px solid rgba(255, 255, 255, 0.503);
+    width: 700px;
+    margin: auto;
+}
+.tvShows__specific_tvShow {
+    margin: auto;
 }
 .tvShows__show_title,
 .watching_show__title,
@@ -53,11 +60,10 @@
     position: absolute;
     background-color: #db4f3df2;
     min-width: 110px;
-    box-shadow: 0px 2px 6px 2px black;
-    padding: 10px 10px;
-    z-index: 1;
-    transform: translate(30%,-5%);
     border-radius: 20px;
+    box-shadow: 0px 2px 6px 2px black;
+    z-index: 1;
+    transform: scale(0.9) translate(100%, -10%);
 }
 .tvShows__specific_tvShow:hover .dropdown-content {
     display: block;
@@ -129,7 +135,7 @@ span {
     padding: 0.5rem;
     margin: .5rem;
     border-radius: 5px;
-    font-size: .9rem;
+    font-size: larger;
     border: 3px solid #db4f3df2;
     outline: none;
 }
@@ -140,23 +146,26 @@ span {
     display: flex;
     flex-direction: column-reverse;
     padding-left: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Times New Roman;
+    font-weight: 500;
   
 }
 .comments {
     margin: 0;
 }
 
-
 /* ---VIEW COMMENTS NO SPOILERS--- */
 .tvShowSelection__button-section {
     display: flex;
     flex-flow: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 button.view-comment__submit,
 button.add-comment__submit {
-    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 600;
     padding: .75rem;
     margin-bottom: 15px;
     color: black;
