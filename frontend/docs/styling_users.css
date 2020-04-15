@@ -1,4 +1,4 @@
-/* LOG IN */
+/* -------LOG IN------- */
 .Login-add-__username {
     padding: 0.5rem;
     margin: 1rem;
@@ -24,7 +24,8 @@ button.Search-addReview-watchList__submit {
     cursor: pointer;
 }
 button.Search-addReview-watchList__submit:hover {
-    background: linear-gradient(to left, #FFFFFF, #dbd63d, #DB4F3D);
+    background: #FFFFFF;
+    box-shadow: inset -7px 0px 10px 0px rgb(219, 80, 61);
 }
 /* ---ALL MEMBERS DISPLAY--- */
 .users {
@@ -57,7 +58,7 @@ h4.user__name_btn {
 }
 .p_name-hover-btn {
     display: none;
-    color: rgba(0, 128, 0, 0.857);
+    color: rgb(246, 250, 10);
 }
 .user__name_btn:hover .p_name-hover-btn {
     display: contents; 

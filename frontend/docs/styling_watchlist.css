@@ -124,7 +124,7 @@ button.update-watchList__submit,
 button.tvShowSelection__reload_reviews {
     font-size: 1.0rem;
     padding: 0.25rem 0.5rem;
-    margin: .25rem;
+    margin: 10px;
     color: rgb(250, 232, 229);
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.598);
     border-radius: 7px;
