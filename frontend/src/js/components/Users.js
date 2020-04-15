@@ -2,7 +2,7 @@ export default function Users(users){
    
     return `
     <section class="users">
-        <h2>All Users</h2>
+        <h2>All Members</h2>
         <div class="users__grid_container">
             ${users.map(user => {
             return `

@@ -49,14 +49,12 @@ export default function TvShows(tvShows){
                     if(Stars >= 1 && Stars <2)
                     return `             
                     <div class="tvShows__specific_tvShow">
-                    <article>
                         <h4 class="tvShows__show_title">${tvShow.title} <p class="p_title-hover-btn">>></p></h4>
                         <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
                         <h5 class="stars_rating">
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         </h5>
                         <input class="tvShow__id" type="hidden" value="${tvShow.id}">
-                    </article>
                     <div class="dropdown-content">
                         <h4>Watching</h4>
                         <h3>${WatchingSum}</h3>
@@ -69,15 +67,13 @@ export default function TvShows(tvShows){
                    if(Stars >= 2 && Stars <3)
                    return `             
                    <div class="tvShows__specific_tvShow">
-                    <article>
                         <h4 class="tvShows__show_title">${tvShow.title} <p class="p_title-hover-btn">>></p></h4>
                         <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
-                        <h5 class="stars_rating>
+                        <h5 class="stars_rating">
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         </h5>
                         <input class="tvShow__id" type="hidden" value="${tvShow.id}">
-                    </article>
                     <div class="dropdown-content">
                         <h4>Watching</h4>
                         <h3>${WatchingSum}</h3>
@@ -90,16 +86,14 @@ export default function TvShows(tvShows){
                   if(Stars >= 3 && Stars <4)
                   return `             
                   <div class="tvShows__specific_tvShow">
-                    <article>
                         <h4 class="tvShows__show_title">${tvShow.title} <p class="p_title-hover-btn">>></p></h4>
                         <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
-                        <h5 class="stars_rating>
+                        <h5 class="stars_rating">
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         </h5>
                         <input class="tvShow__id" type="hidden" value="${tvShow.id}">
-                    </article>
                     <div class="dropdown-content">
                     <h4>Watching</h4>
                         <h3>${WatchingSum}</h3>
@@ -113,17 +107,15 @@ export default function TvShows(tvShows){
                  if(Stars >= 4 && Stars <5)
                 return `             
                 <div class="tvShows__specific_tvShow">
-                    <article>
                         <h4 class="tvShows__show_title">${tvShow.title} <p class="p_title-hover-btn">>></p></h4>
                         <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
-                        <h5 class="stars_rating>
+                        <h5 class="stars_rating">
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         </h5>
                         <input class="tvShow__id" type="hidden" value="${tvShow.id}">
-                    </article>
                     <div class="dropdown-content">
                     <h4>Watching</h4>
                         <h3>${WatchingSum}</h3>
@@ -137,10 +129,9 @@ export default function TvShows(tvShows){
                if(Stars >= 5)
                return `             
                <div class="tvShows__specific_tvShow">
-                    <article>
                         <h4 class="tvShows__show_title">${tvShow.title} <p class="p_title-hover-btn">>></p></h4>
                         <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
-                        <h5 class="stars_rating>
+                        <h5 class="stars_rating">
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
@@ -148,7 +139,6 @@ export default function TvShows(tvShows){
                         <img width="25px" src="https://clipartmag.com/images/stars-transparent-background-21.gif"/>
                         </h5>
                         <input class="tvShow__id" type="hidden" value="${tvShow.id}">
-                    </article>
                     <div class="dropdown-content">
                         <h4>Watching</h4>
                         <h3>${WatchingSum}</h3>
@@ -163,11 +153,9 @@ export default function TvShows(tvShows){
              
                return `             
                <div class="tvShows__specific_tvShow">
-                    <article>
                         <h4 class="tvShows__show_title">${tvShow.title} <p class="p_title-hover-btn">>></p></h4>
                         <img class="tvShows__show_image" src="./img/tvshows/${tvShow.image}" alt="TvShow Image">
                         <input class="tvShow__id" type="hidden" value="${tvShow.id}">
-                    </article>
                     <div class="dropdown-content">
                         <h4>Watching</h4>
                         <h3>${WatchingSum}</h3>

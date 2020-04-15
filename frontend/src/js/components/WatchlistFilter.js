@@ -8,7 +8,6 @@ export default function WatchlistFilter(watchlist){
             watchedShow.innerHTML +=  `<h5 class="watched_show__title">${element.tvShow.title} <p class="p_title-hover-btn">>></p></h5>
             <input class="watch__id"  type="hidden" value="${element.id}">
             <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
-          
           + ` <img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
           + ` </br>`
           + ` <input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
@@ -24,7 +23,6 @@ export default function WatchlistFilter(watchlist){
             watchingShow.innerHTML +=  `<h5 class="watching_show__title">${element.tvShow.title} <p class="p_title-hover-btn">>></p></h5>
             <input class="watch__id"  type="hidden" value="${element.id}">
             <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
-            
             + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
             + `</br>`
             + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
@@ -40,7 +38,6 @@ export default function WatchlistFilter(watchlist){
             <input class="watch__id"  type="hidden" value="${element.id}">
             <input class="watch__Userid"  type="hidden" value="${element.user.id}">`
             + `<input class="watch__tvShowId" type="hidden" value="${element.tvShowId}">`
-            
             + `<img class="tvShow__image" src="./img/tvshows/${element.tvShow.image}" alt="${element.tvShow.image}"></img>`
             + `</br>`
             + `<button class='edit-watchList__submit'>Edit</button>`

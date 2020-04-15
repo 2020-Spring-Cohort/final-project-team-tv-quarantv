@@ -2,15 +2,12 @@
     padding: 30px;
     text-align: center;
     background: linear-gradient(to left, #FFFFFF, #DB4F3D);
+    width: 100%;
 }
 .tvShows__grid_container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
-    padding: 1em;
-}
-.tvShows__grid_container article {
-    padding: .25em;
 }
 .tvShows__show_title,
 .watching_show__title,
@@ -19,7 +16,7 @@
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     font-weight: normal;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 2px;
     cursor: pointer;
 }
@@ -38,7 +35,8 @@
 .watched_show__title:hover .p_title-hover-btn {
     display: contents; 
 }
-/* -----IMAGE----- */
+
+/* -----STARS---IMAGE---DROPDOWN BOX----- */
 .stars_rating {
     margin: 3px 0;
 }
@@ -46,8 +44,7 @@
     border-radius: 20px;
     max-height: 110px;
     max-width: 250px;
-}
-.tvShows__grid_container article img {
+
     position: relative;
     display: inline-block;
 }
@@ -59,7 +56,7 @@
     box-shadow: 0px 2px 6px 2px black;
     padding: 10px 10px;
     z-index: 1;
-    transform: translate(40%,-15%);
+    transform: translate(30%,-5%);
     border-radius: 20px;
 }
 .tvShows__specific_tvShow:hover .dropdown-content {
@@ -76,24 +73,22 @@
     outline: none;
 }
 
-/* ----SPECIFIC TV SHOW INFO---- */
-.tvShow__grid_container {
-    display: grid;
-}
+/* ----------SPECIFIC TV SHOW INFO----------- */
 .tvShow__grid_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 40px;
     margin-top: 20px;
     background: linear-gradient(to left, #FFFFFF, #DB4F3D);
 }
 .tvShow__images {
     width: 100%;
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 .tvShow__grid_container > div {
-    background-color: rgba(245, 255, 250, 0);
     margin: 1px;
 }
 .tvShowSelection__specific_user {
@@ -109,15 +104,54 @@
     box-shadow: 0px 0px 8px 0px;
     width: 300px;
 }
+.tvShowSelection__tvShow_info >h4 {
+    margin: 5px;
+}
 .tvShowSelection__text_area {
     border: 5px solid white;
-    padding:  0em 1em;
+    padding:  0em 2em;
+    line-height: 1;
     border-radius: 16px;
-    line-height: 2;
-    box-shadow: 0px 0px 8px 0px;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    box-shadow: -6px 0px 8px 2px black;
     width: 420px;
+    /* box-shadow: 0px 0px 8px 0px; */
 }
 span {
-    cursor: pointer;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ---VIEW COMMENTS NO SPOILERS--- */
+.tvShowSelection__button-section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+button.view-comment__submit,
+button.add-comment__submit {
+    font-size: 1.1rem;
+    padding: .75rem;
+    margin-bottom: 15px;
+    color: black;
+    background: rgb(250, 232, 229);
+    box-shadow: inset 0px -4px 5px 0px #db4f3d;
+    border-radius: 9px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.view-comment__submit >p {
+    font-size: 1em;
+    color: red;
+    margin: 5px 0;
+}
+button.view-comment__submit:hover,
+button.add-comment__submit:hover {
+    box-shadow: 2px -3px 3px 1px rgba(0, 0, 0, 0.87);
+    opacity: .8;
 }

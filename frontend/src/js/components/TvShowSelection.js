@@ -7,6 +7,10 @@ export default function TvShowSelection(tvShow) {
                 <img class="tvShow__images" src="./img/tvshows/${tvShow.image}" alt="${tvShow.image}"></img>
                 <input class="tvShow__id" type="hidden" value="${tvShow.id}">
                 </br>
+                </br>
+                <section class="tvShowSelection__button_section"> 
+                    <button class="view-comment__submit">View Comments <p>*Contains Spoilers!*</p></button>    
+                </section> 
             </div>
             <div class="tvShowSelection__text_area">
                 <h3>Popular Reviews</h3>
@@ -29,13 +33,7 @@ export default function TvShowSelection(tvShow) {
                     }
                 }).join("")}
             </div>
-
         </div>
-        </br>
-        </br>
-        <section class="tvShowSelection__button_section"> 
-            <button class="view-comment__submit">View Comments *Contains Spoilers!*</button>    
-        </section> 
        
     `
 }

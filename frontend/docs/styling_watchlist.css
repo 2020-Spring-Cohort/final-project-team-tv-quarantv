@@ -1,5 +1,10 @@
 /* ---BASIC & SET-UP--- */
-.watchlist__upper_grid_container {
+.watchlist_header >h2 {
+    text-align: center;
+}
+.watchlist__upper_grid_container,
+.watchlist_header {
+    padding: 5px;
     background: linear-gradient(to left, #FFFFFF, #DB4F3D);
 }
 .watchlist__add_show > p,
@@ -13,13 +18,13 @@ label {
 /* ---ADD A SHOW TO LIST BUTTONS & FORM--- */
 button.watchlist__add_show_button,
 button.watchlistaddshow__submit {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: .5rem;
-    margin-top: 2rem;
-    color: #fff;
-    background: rgba(0, 128, 0, 0.673);
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.87);
-    border-radius: 7px;
+    margin-bottom: 15px;
+    color: black;
+    background: rgb(250, 232, 229);
+    box-shadow: inset 0px -4px 5px 0px #db4f3d;
+    border-radius: 9px;
     text-align: center;
     text-transform: capitalize;
     cursor: pointer;
@@ -37,14 +42,16 @@ button.watchlistaddshow__submit {
     padding: 0.25rem;
     margin: .5rem;
     border-radius: 9px;
-    font-size: 1.15rem;
-    box-shadow: 0px 4px 5px 0px #008000;
+    font-size: 1rem;
+    background: rgb(250, 232, 229);
+    box-shadow: 0px 4px 5px 0px #db4f3d;
     border: none;
     outline: none;
 }
 .watchlistaddshow__show_id:hover,
 .watchlistaddshow__status_choice:hover {
-    box-shadow: inset 0px 3px 5px 0px #008000;
+    background: rgb(250, 232, 229);
+    box-shadow: inset 0px 3px 5px 0px #db4f3d;
 }
 /* ---WATCHLIST GRID & INNER CONTENT--- */
 .watchlist__grid_items_container {
@@ -103,21 +110,23 @@ button.edit-watchList__submit,
 button.update-watchList__submit {
     background: rgba(99, 144, 233, 0.734);
 }
-button.addReview-watchList__submit {
-    background: rgba(31, 104, 250, 0.898);
+button.addReview-watchList__submit,
+button.tvShowSelection__reload_reviews {
+    background: rgb(31, 104, 250);
 }
-button.deleteReview-watchList__submit{
-    background: rgba(162, 9, 4, 0.53);
+button.deleteReview-watchList__submit {
+    background: rgba(162, 9, 4, 0.918);
 }
 button.edit-watchList__submit, 
 button.deleteReview-watchList__submit, 
 button.addReview-watchList__submit,
-button.update-watchList__submit {
+button.update-watchList__submit,
+button.tvShowSelection__reload_reviews {
     font-size: 1.0rem;
     padding: 0.25rem 0.5rem;
     margin: .25rem;
-    color: black;
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.87);
+    color: rgb(250, 232, 229);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.598);
     border-radius: 7px;
     cursor: pointer;
     border: none;
@@ -128,26 +137,9 @@ button.edit-watchList__submit:hover,
 button.deleteReview-watchList__submit:hover,
 button.addReview-watchList__submit:hover,
 button.watchlistaddshow__submit:hover,
-button.update-watchList__submit:hover {
+button.update-watchList__submit:hover,
+button.tvShowSelection__reload_reviews:hover {
     box-shadow: 2px -3px 3px 1px rgba(0, 0, 0, 0.87);
     opacity: .8;
 }
 
-
- /* ----OTHER BUTTONS---- */
-/* trying to save team time to work on more important things */
-/* can be copied into style sheet it belongs to when the focus shifts */
-
-/* ---VIEW COMMENTS NO SPOILERS--- */
-button.view-comment__submit {
-    font-size: 1.3rem;
-    padding: .5rem;
-    margin-top: 2rem;
-    color: #fff;
-    background: rgba(0, 128, 0, 0.53);
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.87);
-    border-radius: 7px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-}

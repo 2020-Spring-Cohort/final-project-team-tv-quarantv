@@ -26,7 +26,7 @@ export default function WatchlistAddShow(tvShows) {
         <option value="Watching">Watching</option>
         <option value="Watched">Watched</option>
     </select>
-    <br><br>
+    <br>
     <button class="watchlistaddshow__submit">Add show</button>
     `
     
