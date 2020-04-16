@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     padding: 1em;
     border: 5px solid rgba(255, 255, 255, 0.503);
+    box-shadow: 0 0 4px 1px rgba(219, 80, 61, 0.9);
     width: 700px;
     margin: auto;
 }
