@@ -64,16 +64,11 @@ function home() {
     const homeNav = document.querySelector('.nav__home');
     const mainDiv = document.querySelector('.main_div');
     homeNav.addEventListener('click', function(){
-        ////////////////////////////////
         apiActions.getRequest("http://localhost:51880/api/User",
         users => {
-            console.log(users);
-            //mainDiv.innerHTML = Users(users);
             mainDiv.innerHTML = Home(users);
         }
     )
-        /////////////////////////////////
-      //  mainDiv.innerHTML = Home();
     })
 }
 

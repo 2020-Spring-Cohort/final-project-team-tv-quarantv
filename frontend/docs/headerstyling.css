@@ -1,0 +1,21 @@
+.main_header {
+    font-family: 'Days One', sans-serif;
+    font-weight: heavy;
+}
+
+.qtv_logo {
+    float:left;
+    padding-right: 1rem;
+    padding-bottom: .75rem;
+    padding-left: 10px;
+    top: -3px;
+    max-width: 75px;
+    max-height: 60 px;
+}
+
+.main_header h1{
+    padding-top: .5rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: rgb(250, 232, 229);
+}

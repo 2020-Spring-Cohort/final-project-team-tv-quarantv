@@ -27,11 +27,23 @@ button.Search-addReview-watchList__submit:hover {
     background: #FFFFFF;
     box-shadow: inset -7px 0px 10px 0px rgb(219, 80, 61);
 }
+.login__grid_container{
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: auto;
+    padding: 1em;
+    grid-row-gap: .5em;
+    width: 300px;
+    margin: auto;
+}
 /* ---ALL MEMBERS DISPLAY--- */
 .users {
     padding: 30px;
     text-align: center;
     background: linear-gradient(to left, #FFFFFF, #DB4F3D);
+}
+.users >h2{
+    font-family: 'Manrope', sans-serif;
 }
 h4.user__name_btn {
     margin-top: 7px;
@@ -44,6 +56,7 @@ h4.user__name_btn {
     padding: 1em;
     grid-row-gap: 2em;
     border: 5px solid rgba(255, 255, 255, 0.503);
+    box-shadow: 0 0 4px 1px rgba(219, 80, 61, 0.9);
     width: 500px;
     margin: auto;
 }
