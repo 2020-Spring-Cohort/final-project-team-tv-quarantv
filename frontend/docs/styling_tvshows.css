@@ -117,10 +117,6 @@
 .tvShowSelection__tvShow_info >h4 {
     margin: 5px;
 }
-span {
-    text-decoration: underline;
-    cursor: pointer;
-}
 .tvShowSelection__text_area {
     font-family: 'Manrope', sans-serif;
     border: 5px solid white;
