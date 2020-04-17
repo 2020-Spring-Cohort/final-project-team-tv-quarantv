@@ -1,12 +1,12 @@
 export default function Navbar() {
 return `
-<nav class='navbar_list'>
-         <ul>
-         <li class='nav__home'> <h3  class="btn btn-ghost ">Home</h3></li>
-         <li class='nav__users'> <h3  class="btn btn-ghost ">Users</h3></li>
-         <li class='nav__tvshows'> <h3  class="btn btn-ghost ">Tv Shows</h3></li>
-         <li class='nav__aboutus'> <h3  class="btn btn-ghost ">About Us</h3></li>
+   <nav class='navbar_list'>
+         <ul class='navbarlist'>
+            <li class='nav__home'>Home Login</li>
+            <li class='nav__users'>Members</li>
+            <li class='nav__tvshows'>Tv Shows</li>
+            <li class='nav__aboutus'>About Us</li>
          </ul>
-    </nav>
-    ` 
+   </nav>
+`
 }

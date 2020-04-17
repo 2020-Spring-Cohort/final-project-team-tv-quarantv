@@ -14,14 +14,10 @@ namespace QuaranTV.Models
 
 
 
-
         [JsonIgnore]
-        public virtual ICollection<Comment> Comments { get; set; }
-
+        public virtual IList<Watchlist> Watchlists { get; set; }
         [JsonIgnore]
-        public virtual IList<UserTvShow> UserTvShows { get; set; }
-
-
+        public virtual IList<Comment> Comments { get; set; }
 
 
 

@@ -11,19 +11,15 @@ namespace QuaranTV.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
-        public int Season { get; set; }
+        public string Season { get; set; }
         public string ViewerDiscretion { get; set; }
 
 
 
-
-
         [JsonIgnore]
-        public virtual ICollection<Comment> Comments { get; set; }
-
+        public virtual IList<Watchlist> Watchlists { get; set; }
         [JsonIgnore]
-        public virtual IList<UserTvShow> UserTvShows { get; set; }
-
+        public virtual IList<Comment> Comments { get; set; }
 
 
 
@@ -31,7 +27,7 @@ namespace QuaranTV.Models
         {
         }
 
-        public TvShow(int id, string title, string image, int season, string viewerDiscretion)
+        public TvShow(int id, string title, string image, string season, string viewerDiscretion)
         {
             Id = id;
             Title = title;

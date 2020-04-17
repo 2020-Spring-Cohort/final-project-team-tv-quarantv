@@ -53,5 +53,15 @@ namespace QuaranTV.Repositories
         {
             return db.Set<T>().ToList();
         }
+
+        public virtual IEnumerable<T> GetByUserId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual IEnumerable<T> GetByTvShowId(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

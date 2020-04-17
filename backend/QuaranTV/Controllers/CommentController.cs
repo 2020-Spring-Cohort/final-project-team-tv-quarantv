@@ -20,29 +20,36 @@ namespace QuaranTV.Controllers
             this.commentRepo = commentRepo;
         }
 
-        // GET: api/Placeholder
+        // GET: api/Comment
         [HttpGet]
         public IEnumerable<Comment> Get()
         {
             return commentRepo.GetAll();
         }
 
-        // GET: api/Placeholder/5
+        // GET: api/Comment/5
         [HttpGet("{id}")]
         public Comment Get(int id)
         {
             return commentRepo.GetById(id);
         }
 
-        // POST: api/Placeholder
+        // GET: api/Comment/TvShow/5
+        [HttpGet("TvShow/{tvShowId}")]
+        public IEnumerable<Comment> GetCommentsByTvShow(int tvShowId)
+        {
+            return commentRepo.GetByTvShowId(tvShowId);
+        }
+
+        // POST: api/Comment
         [HttpPost]
         public IEnumerable<Comment> Post([FromBody] Comment value)
         {
             commentRepo.Create(value);
-            return commentRepo.GetAll();
+            return commentRepo.GetByTvShowId(value.TvShowId);
         }
 
-        // PUT: api/Placeholder/5
+        // PUT: api/Comment/5
         [HttpPut("{id}")]
         public IEnumerable<Comment> Put([FromBody] Comment value)
         {

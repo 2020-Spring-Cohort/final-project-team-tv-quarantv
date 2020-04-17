@@ -9,10 +9,7 @@ namespace QuaranTV.Models
     public class Comment
     {
         public int Id { get; set; }
-        public string Body { get; set; }
-        public string Rating { get; set; }
-
-
+        public string CommentText { get; set; }
 
 
         [JsonIgnore]
@@ -22,19 +19,16 @@ namespace QuaranTV.Models
         [JsonIgnore]
         public virtual TvShow TvShow { get; set; }
         public int TvShowId { get; set; }
-        
-
 
 
         public Comment()
         {
         }
 
-        public Comment(int id, string body, string rating)
+        public Comment(int id, string commentText)
         {
             Id = id;
-            Body = body;
-            Rating = rating;
+            CommentText = commentText;
         }
     }
 }
